@@ -7,7 +7,7 @@
 
 ## 1. 完整的 JSON-LD @graph
 
-**站点域名**: `https://loopcanvas.app`
+**站点域名**: `https://loopcanvas.video`
 **品牌名**: LoopCanvas AI
 **标语**: Create Perfect Seamless Loop Videos with AI
 
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "LoopCanvas AI - Free AI Loop Video Generator",
     description:
       "Create seamless loop videos with AI. Text-to-loop and image-to-loop. Free to try.",
-    url: "https://loopcanvas.app",
+    url: "https://loopcanvas.video",
     type: "website",
     siteName: "LoopCanvas AI",
     locale: "en_US",
@@ -47,30 +47,30 @@ export function HomeJsonLd() {
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://loopcanvas.app/#website",
-        "url": "https://loopcanvas.app",
+        "@id": "https://loopcanvas.video/#website",
+        "url": "https://loopcanvas.video",
         "name": "LoopCanvas AI - Free AI Loop Video Generator",
         "description":
           "Create mesmerizing seamless loop videos with AI. Turn text prompts or images into infinite looping videos for Spotify Canvas, website backgrounds, and social media.",
         "inLanguage": "en",
-        "publisher": { "@id": "https://loopcanvas.app/#organization" },
+        "publisher": { "@id": "https://loopcanvas.video/#organization" },
         "potentialAction": {
           "@type": "SearchAction",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "https://loopcanvas.app/search?q={search_term_string}",
+            "urlTemplate": "https://loopcanvas.video/search?q={search_term_string}",
           },
           "query-input": "required name=search_term_string",
         },
       },
       {
         "@type": "Organization",
-        "@id": "https://loopcanvas.app/#organization",
+        "@id": "https://loopcanvas.video/#organization",
         "name": "LoopCanvas AI",
-        "url": "https://loopcanvas.app",
+        "url": "https://loopcanvas.video",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://loopcanvas.app/logo-512.png",
+          "url": "https://loopcanvas.video/logo-512.png",
           "width": 512,
           "height": 512,
         },
@@ -85,9 +85,9 @@ export function HomeJsonLd() {
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://loopcanvas.app/#app",
+        "@id": "https://loopcanvas.video/#app",
         "name": "LoopCanvas AI Loop Video Generator",
-        "alternateName": ["LoopCanvas AI", "loopcanvas.app"],
+        "alternateName": ["LoopCanvas AI", "loopcanvas.video"],
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Video Generation",
         "operatingSystem": "Web",
@@ -119,7 +119,7 @@ export function HomeJsonLd() {
           "description":
             "Free tier: 3 generations per day at 720p with watermark. Pro: unlimited HD 1080p downloads at $9.99/month with full commercial license.",
           "availability": "https://schema.org/InStock",
-          "url": "https://loopcanvas.app/pricing",
+          "url": "https://loopcanvas.video/pricing",
         },
         "aggregateRating": {
           "@type": "AggregateRating",
@@ -167,7 +167,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Spotify Canvas Maker - Free AI Looping Video Generator",
     description: "Turn album art into looping Spotify Canvas videos with AI.",
-    url: "https://loopcanvas.app/spotify-canvas-maker",
+    url: "https://loopcanvas.video/spotify-canvas-maker",
     type: "website",
   },
 };
@@ -178,7 +178,7 @@ export function SpotifyCanvasJsonLd() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://loopcanvas.app/spotify-canvas-maker/#webapp",
+        "@id": "https://loopcanvas.video/spotify-canvas-maker/#webapp",
         "name": "Spotify Canvas Maker by LoopCanvas AI",
         "description":
           "Create seamless looping videos for Spotify Canvas with AI. Upload album art and get a hypnotic 3–8 second loop optimized for Spotify's Canvas format.",
@@ -201,12 +201,12 @@ export function SpotifyCanvasJsonLd() {
       },
       {
         "@type": "VideoObject",
-        "@id": "https://loopcanvas.app/spotify-canvas-maker/#demo",
+        "@id": "https://loopcanvas.video/spotify-canvas-maker/#demo",
         "name": "Spotify Canvas Demo - AI Generated Looping Video",
         "description":
           "Demo of an AI-generated seamless looping video for Spotify Canvas, created from album art.",
-        "thumbnailUrl": "https://loopcanvas.app/images/canvas-demo-thumb.jpg",
-        "contentUrl": "https://loopcanvas.app/videos/canvas-demo.mp4",
+        "thumbnailUrl": "https://loopcanvas.video/images/canvas-demo-thumb.jpg",
+        "contentUrl": "https://loopcanvas.video/videos/canvas-demo.mp4",
         "duration": "PT5S",
         "uploadDate": "2026-05-18",
         "genre": "AI Generated Loop Video - Spotify Canvas",
@@ -214,12 +214,12 @@ export function SpotifyCanvasJsonLd() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopcanvas.app/" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopcanvas.video/" },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Spotify Canvas Maker",
-            "item": "https://loopcanvas.app/spotify-canvas-maker",
+            "item": "https://loopcanvas.video/spotify-canvas-maker",
           },
         ],
       },
@@ -260,7 +260,7 @@ export function PricingJsonLd() {
             "availability": "https://schema.org/InStock",
             "description":
               "3 generations per day at 720p with watermark. Personal use only.",
-            "url": "https://loopcanvas.app/pricing",
+            "url": "https://loopcanvas.video/pricing",
           },
           {
             "@type": "Offer",
@@ -270,7 +270,7 @@ export function PricingJsonLd() {
             "availability": "https://schema.org/InStock",
             "description":
               "Unlimited HD (1080p) generations, no watermark, full commercial license, priority processing.",
-            "url": "https://loopcanvas.app/pricing",
+            "url": "https://loopcanvas.video/pricing",
             "priceValidUntil": "2026-12-31",
           },
           {
@@ -281,19 +281,19 @@ export function PricingJsonLd() {
             "availability": "https://schema.org/InStock",
             "description":
               "Everything in Pro plus 5 team seats, shared asset library, and API access.",
-            "url": "https://loopcanvas.app/pricing",
+            "url": "https://loopcanvas.video/pricing",
           },
         ],
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopcanvas.app/" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopcanvas.video/" },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Pricing",
-            "item": "https://loopcanvas.app/pricing",
+            "item": "https://loopcanvas.video/pricing",
           },
         ],
       },
@@ -321,19 +321,19 @@ export function GalleryJsonLd() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": "https://loopcanvas.app/gallery/#collection",
+        "@id": "https://loopcanvas.video/gallery/#collection",
         "name": "AI Loop Video Gallery - Examples & Templates | LoopCanvas AI",
         "description":
           "Browse stunning examples of AI-generated seamless loop videos. Get inspired by loops created with LoopCanvas AI for Spotify Canvas, websites, and social media.",
-        "url": "https://loopcanvas.app/gallery",
+        "url": "https://loopcanvas.video/gallery",
         "hasPart": [
           {
             "@type": "VideoObject",
             "name": "Sunset Ocean Loop - Seamless AI Video",
             "description":
               "Infinite looping ocean sunset video generated by LoopCanvas AI. Perfect for website background.",
-            "thumbnailUrl": "https://loopcanvas.app/images/gallery/sunset-ocean-thumb.jpg",
-            "contentUrl": "https://loopcanvas.app/videos/gallery/sunset-ocean-loop.mp4",
+            "thumbnailUrl": "https://loopcanvas.video/images/gallery/sunset-ocean-thumb.jpg",
+            "contentUrl": "https://loopcanvas.video/videos/gallery/sunset-ocean-loop.mp4",
             "duration": "PT5S",
             "uploadDate": "2026-05-18",
           },
@@ -342,8 +342,8 @@ export function GalleryJsonLd() {
             "name": "Abstract Particle Flow - AI Loop Video",
             "description":
               "Hypnotic particle flow loop ideal for Spotify Canvas and social media.",
-            "thumbnailUrl": "https://loopcanvas.app/images/gallery/particle-flow-thumb.jpg",
-            "contentUrl": "https://loopcanvas.app/videos/gallery/particle-flow-loop.mp4",
+            "thumbnailUrl": "https://loopcanvas.video/images/gallery/particle-flow-thumb.jpg",
+            "contentUrl": "https://loopcanvas.video/videos/gallery/particle-flow-loop.mp4",
             "duration": "PT4S",
             "uploadDate": "2026-05-18",
           },
@@ -352,12 +352,12 @@ export function GalleryJsonLd() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopcanvas.app/" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopcanvas.video/" },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Gallery",
-            "item": "https://loopcanvas.app/gallery",
+            "item": "https://loopcanvas.video/gallery",
           },
         ],
       },
@@ -385,21 +385,21 @@ export function BlogListJsonLd() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": "https://loopcanvas.app/blog/#collection",
+        "@id": "https://loopcanvas.video/blog/#collection",
         "name": "AI Loop Video Generator Blog - Guides & Tutorials | LoopCanvas AI",
         "description":
           "Learn how to create stunning seamless loop videos with AI. Guides on Spotify Canvas, website backgrounds, video formats, and AI loop video best practices.",
-        "url": "https://loopcanvas.app/blog",
+        "url": "https://loopcanvas.video/blog",
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopcanvas.app/" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopcanvas.video/" },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Blog",
-            "item": "https://loopcanvas.app/blog",
+            "item": "https://loopcanvas.video/blog",
           },
         ],
       },
@@ -427,19 +427,19 @@ export function PillarArticleJsonLd() {
     "@graph": [
       {
         "@type": "Article",
-        "@id": "https://loopcanvas.app/blog/ai-loop-video-generator-guide/#article",
+        "@id": "https://loopcanvas.video/blog/ai-loop-video-generator-guide/#article",
         "headline": "Ultimate Guide to AI Loop Video Generators in 2026",
         "description":
           "Complete guide to the best AI loop video generators. Learn how to create seamless infinite loops for Spotify Canvas, websites, and social media.",
         "author": {
           "@type": "Organization",
           "name": "LoopCanvas AI",
-          "url": "https://loopcanvas.app",
+          "url": "https://loopcanvas.video",
         },
-        "publisher": { "@id": "https://loopcanvas.app/#organization" },
+        "publisher": { "@id": "https://loopcanvas.video/#organization" },
         "datePublished": "2026-05-19",
         "dateModified": "2026-05-19",
-        "mainEntityOfPage": "https://loopcanvas.app/blog/ai-loop-video-generator-guide",
+        "mainEntityOfPage": "https://loopcanvas.video/blog/ai-loop-video-generator-guide",
         "inLanguage": "en",
       },
       {
@@ -482,13 +482,13 @@ export function PillarArticleJsonLd() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopcanvas.app/" },
-          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://loopcanvas.app/blog" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopcanvas.video/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://loopcanvas.video/blog" },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Ultimate Guide to AI Loop Video Generators",
-            "item": "https://loopcanvas.app/blog/ai-loop-video-generator-guide",
+            "item": "https://loopcanvas.video/blog/ai-loop-video-generator-guide",
           },
         ],
       },
@@ -556,8 +556,8 @@ export function HowToArticleJsonLd() {
         "name": "How to Create a Seamless Loop Video - Tutorial Demo",
         "description":
           "Demo showing how to create a seamless loop video with LoopCanvas AI in under 5 minutes.",
-        "thumbnailUrl": "https://loopcanvas.app/images/tutorials/seamless-loop-howto-thumb.jpg",
-        "contentUrl": "https://loopcanvas.app/videos/tutorials/seamless-loop-howto.mp4",
+        "thumbnailUrl": "https://loopcanvas.video/images/tutorials/seamless-loop-howto-thumb.jpg",
+        "contentUrl": "https://loopcanvas.video/videos/tutorials/seamless-loop-howto.mp4",
         "duration": "PT2M30S",
         "uploadDate": "2026-05-21",
       },
@@ -568,21 +568,21 @@ export function HowToArticleJsonLd() {
           "@type": "Organization",
           "name": "LoopCanvas AI",
         },
-        "publisher": { "@id": "https://loopcanvas.app/#organization" },
+        "publisher": { "@id": "https://loopcanvas.video/#organization" },
         "datePublished": "2026-05-21",
         "dateModified": "2026-05-21",
-        "mainEntityOfPage": "https://loopcanvas.app/blog/how-to-create-seamless-loop-video",
+        "mainEntityOfPage": "https://loopcanvas.video/blog/how-to-create-seamless-loop-video",
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopcanvas.app/" },
-          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://loopcanvas.app/blog" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopcanvas.video/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://loopcanvas.video/blog" },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "How to Create a Seamless Loop Video",
-            "item": "https://loopcanvas.app/blog/how-to-create-seamless-loop-video",
+            "item": "https://loopcanvas.video/blog/how-to-create-seamless-loop-video",
           },
         ],
       },
@@ -626,7 +626,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://loopcanvas.app"),
+  metadataBase: new URL("https://loopcanvas.video"),
   title: {
     default: "LoopCanvas AI - Free AI Loop Video Generator",
     template: "%s | LoopCanvas AI",
@@ -655,7 +655,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://loopcanvas.app" />
+        <link rel="dns-prefetch" href="https://loopcanvas.video" />
       </head>
       <body className="min-h-screen bg-white text-gray-900 font-sans">
         {children}
@@ -742,12 +742,12 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "loopcanvas.app",
+        hostname: "loopcanvas.video",
         pathname: "/images/**",
       },
       {
         protocol: "https",
-        hostname: "loopcanvas.app",
+        hostname: "loopcanvas.video",
         pathname: "/videos/thumbnails/**",
       },
       {
@@ -830,7 +830,7 @@ import Script from "next/script";
 // src/app/robots.ts
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://loopcanvas.app";
+const SITE_URL = "https://loopcanvas.video";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -892,7 +892,7 @@ export default function robots(): MetadataRoute.Robots {
 // src/app/sitemap.ts
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://loopcanvas.app";
+const SITE_URL = "https://loopcanvas.video";
 
 interface BlogPost {
   slug: string;
@@ -987,6 +987,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 - [X] 所有 JSON-LD 已通过 JSON.parse() 验证
 - [X] 所有 TypeScript 代码可以直接保存为 .ts / .tsx 文件运行
 - [X] 没有空数组 []、省略号 ... 或 [your-xxx-here] 占位符
-- [X] 所有 URL 是实际域名 `https://loopcanvas.app`，不是 example.com
+- [X] 所有 URL 是实际域名 `https://loopcanvas.video`，不是 example.com
 - [X] robots.ts 包含完整 AI 爬虫屏蔽规则（GPTBot / CCBot / ClaudeBot / anthropic-ai / PerplexityBot / Google-Extended）
 - [X] sitemap.ts 覆盖所有静态路由 + 12 篇博客动态路由

@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LoopCanvas AI — Core Workspace
 
-## Getting Started
+AI-powered seamless loop video generator. Turn text prompts or images into infinite looping videos for Spotify Canvas, website backgrounds, social media, and digital art.
 
-First, run the development server:
+**Domain**: `https://loopcanvas.app`
+**Stack**: Next.js 16 (App Router) + React 19 + TypeScript strict + Tailwind CSS v4 + shadcn/ui (base-nova) + Supabase + OpenRouter
+
+## Quick start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm dev        # → http://localhost:3000
+pnpm build      # production build
+pnpm lint       # ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/                    # App Router (19 routes)
+│   ├── layout.tsx          # Root layout (fonts, metadata)
+│   ├── page.tsx            # Home — AI loop video generator
+│   ├── globals.css         # Tailwind v4 @theme inline tokens + light/dark
+│   ├── spotify-canvas-maker/page.tsx
+│   ├── pricing/page.tsx
+│   ├── gallery/page.tsx
+│   ├── blog/
+│   │   ├── page.tsx        # Blog list
+│   │   └── [slug]/page.tsx # Article detail
+│   ├── login/page.tsx
+│   ├── signup/page.tsx
+│   ├── profile/page.tsx
+│   ├── checkout/route.ts
+│   ├── portal/route.ts
+│   ├── legal/
+│   │   ├── privacy/page.tsx
+│   │   └── terms/page.tsx
+│   ├── auth/
+│   │   ├── callback/route.ts
+│   │   └── confirm/route.ts
+│   └── api/
+│       ├── generate/route.ts
+│       ├── photo-to-line/route.ts
+│       ├── credit-status/route.ts
+│       ├── auth/signout/route.ts
+│       └── webhooks/creem/route.ts
+├── components/
+│   └── ui/button.tsx       # shadcn base-nova Button
+└── lib/
+    ├── utils.ts            # cn() helper
+    └── site-config.ts      # SITE_URL, SITE_NAME, SITE_DESCRIPTION
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Current phase
 
-## Learn More
+**Phase 3a — Project Init** is substantially complete (9/10 tasks). All routes scaffolded, dependencies installed, Tailwind v4 + shadcn configured, design tokens in place.
 
-To learn more about Next.js, take a look at the following resources:
+**Next up**: Phase 3b — SEO components (JSON-LD, robots.ts, sitemap.ts, font config, metadata).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Full task list and progress tracked in `../prompts/dev_plan/sop/to-do-list/MASTER_SOP.md`.

@@ -1,7 +1,7 @@
 # INFORMATION_ARCHITECTURE.md — AI Loop Video Generator
 
 > 基于 Gemini Round 1 骨架 (v2) → DeepSeek-V4 细化
-> 站点域名: `https://loopcanvas.app`
+> 站点域名: `https://loopcanvas.video`
 
 ---
 
