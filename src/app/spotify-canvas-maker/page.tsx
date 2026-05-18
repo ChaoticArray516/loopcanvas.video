@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowRight, Music, CheckCircle2, Zap, Image } from "lucide-react";
 import SpotifyCanvasJsonLd from "@/components/seo/SpotifyCanvasJsonLd";
 
+export const revalidate = 3600;
+
 export const metadata = {
   title: "Spotify Canvas Maker",
   description:

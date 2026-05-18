@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site-config";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // Default: allow all standard crawlers
       {
         userAgent: "*",
         allow: [
@@ -23,38 +23,21 @@ export default function robots(): MetadataRoute.Robots {
           "/profile",
           "/_next/",
           "/cgi-bin/",
-          "/*?*", // query params
+          "/*?*",
         ],
       },
-      // AI crawlers: full disallow
-      {
-        userAgent: "GPTBot",
-        disallow: "/",
-      },
-      {
-        userAgent: "CCBot",
-        disallow: "/",
-      },
-      {
-        userAgent: "ClaudeBot",
-        disallow: "/",
-      },
-      {
-        userAgent: "anthropic-ai",
-        disallow: "/",
-      },
-      {
-        userAgent: "PerplexityBot",
-        disallow: "/",
-      },
-      // Google-Extended: limited disallow
+      { userAgent: "GPTBot", disallow: "/" },
+      { userAgent: "CCBot", disallow: "/" },
+      { userAgent: "ClaudeBot", disallow: "/" },
+      { userAgent: "anthropic-ai", disallow: "/" },
+      { userAgent: "PerplexityBot", disallow: "/" },
       {
         userAgent: "Google-Extended",
         allow: "/",
         disallow: ["/gallery/", "/api/"],
       },
     ],
-    sitemap: "https://loopcanvas.video/sitemap.xml",
-    host: "https://loopcanvas.video",
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
 import GalleryJsonLd from "@/components/seo/GalleryJsonLd";
 
+export const revalidate = 3600;
+
 export const metadata = {
   title: "Gallery",
   description:
