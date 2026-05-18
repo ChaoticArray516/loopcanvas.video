@@ -86,13 +86,35 @@ export default function PhotoUpload() {
     setVideoUrl(null);
     setErrorMsg("");
 
-    // TODO: replace with real API call (Phase 4a)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-      setVideoUrl("/samples/nature-ocean-1.mp4");
+      const formData = new FormData();
+      formData.append("image", file);
+
+      const res = await fetch("/api/photo-to-line", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) {
+        const data = (await res.json()) as { error?: string; message?: string };
+        if (res.status === 402) {
+          setErrorMsg(data.message || "Credits exhausted. Upgrade to Pro for more generations.");
+        } else {
+          setErrorMsg(data.message || `Generation failed (${res.status}). Please try again.`);
+        }
+        setStatus("error");
+        return;
+      }
+
+      const data = (await res.json()) as {
+        videoUrl: string;
+        model: string;
+        creditsRemaining: number;
+      };
+      setVideoUrl(data.videoUrl);
       setStatus("success");
     } catch {
-      setErrorMsg("Generation failed. Please try again.");
+      setErrorMsg("Network error. Please check your connection and try again.");
       setStatus("error");
     }
   }

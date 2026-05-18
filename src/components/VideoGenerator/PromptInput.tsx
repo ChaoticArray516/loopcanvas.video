@@ -40,14 +40,33 @@ export default function PromptInput({ initialPrompt = "" }: Props) {
     setVideoUrl(null);
     setErrorMsg("");
 
-    // TODO: replace with real API call (Phase 4a)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-      // Simulate success
-      setVideoUrl("/samples/nature-ocean-1.mp4");
+      const res = await fetch("/api/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: prompt.trim() }),
+      });
+
+      if (!res.ok) {
+        const data = (await res.json()) as { error?: string; message?: string };
+        if (res.status === 402) {
+          setErrorMsg(data.message || "Credits exhausted. Upgrade to Pro for more generations.");
+        } else {
+          setErrorMsg(data.message || `Generation failed (${res.status}). Please try again.`);
+        }
+        setStatus("error");
+        return;
+      }
+
+      const data = (await res.json()) as {
+        videoUrl: string;
+        model: string;
+        creditsRemaining: number;
+      };
+      setVideoUrl(data.videoUrl);
       setStatus("success");
     } catch {
-      setErrorMsg("Generation failed. Please try again.");
+      setErrorMsg("Network error. Please check your connection and try again.");
       setStatus("error");
     }
   }
