@@ -11,6 +11,9 @@ importers:
       '@base-ui/react':
         specifier: ^1.4.1
         version: 1.4.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@creem_io/nextjs':
+        specifier: ^0.5.0
+        version: 0.5.0(next@16.2.6(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       '@supabase/ssr':
         specifier: ^0.10.3
         version: 0.10.3(@supabase/supabase-js@2.105.4)
@@ -241,6 +244,15 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
+
+  '@creem_io/nextjs@0.5.0':
+    resolution: {integrity: sha512-cGDO3UkJYABSopUj2/E/z8F3VD1nbAbKVUKMMrsqbWFdE1dROl8dkExMqt3DMV2T34egmrKnAWrlQ3+6vqlOJA==}
+    peerDependencies:
+      next: '>=13.0.0'
+      react: '>=18.0.0'
+
+  '@creem_io/webhook-types@1.0.0':
+    resolution: {integrity: sha512-LZUgFG+UNb+SkVAz/TngdGDgwfE1mxzX1tlcRmwfA94h/SH5nv0Qtg25GO+JTXyMsMAu5pD596HpezAo3WtJcQ==}
 
   '@dotenvx/dotenvx@1.66.0':
     resolution: {integrity: sha512-qlQFhHUjhRDybrinqLAD0MClVZDOrsq80O8eD5iSjz3Qa/4f3Jg7SQrOaSobrRyP1QaWIYLGtGpj2c7H0D8NUw==}
@@ -1220,6 +1232,10 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  creem@1.4.5:
+    resolution: {integrity: sha512-6M4JeHkjp4HxqcFAes8HDtt2IJfXMFUpqqaII3JhfnKpL+7mr9kRauTI7kQjgMJyqKooum4IrsFoKFDeGOKzBg==}
+    hasBin: true
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -3248,6 +3264,18 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.14
 
+  '@creem_io/nextjs@0.5.0(next@16.2.6(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@creem_io/webhook-types': 1.0.0
+      creem: 1.4.5
+      next: 16.2.6(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react: 19.2.4
+    transitivePeerDependencies:
+      - '@cfworker/json-schema'
+      - supports-color
+
+  '@creem_io/webhook-types@1.0.0': {}
+
   '@dotenvx/dotenvx@1.66.0':
     dependencies:
       commander: 11.1.0
@@ -3526,6 +3554,28 @@ snapshots:
       raw-body: 3.0.2
       zod: 3.25.76
       zod-to-json-schema: 3.25.2(zod@3.25.76)
+    transitivePeerDependencies:
+      - supports-color
+
+  '@modelcontextprotocol/sdk@1.29.0(zod@4.4.3)':
+    dependencies:
+      '@hono/node-server': 1.19.14(hono@4.12.19)
+      ajv: 8.20.0
+      ajv-formats: 3.0.1(ajv@8.20.0)
+      content-type: 1.0.5
+      cors: 2.8.6
+      cross-spawn: 7.0.6
+      eventsource: 3.0.7
+      eventsource-parser: 3.0.8
+      express: 5.2.1
+      express-rate-limit: 8.5.2(express@5.2.1)
+      hono: 4.12.19
+      jose: 6.2.3
+      json-schema-typed: 8.0.2
+      pkce-challenge: 5.0.1
+      raw-body: 3.0.2
+      zod: 4.4.3
+      zod-to-json-schema: 3.25.2(zod@4.4.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -4175,6 +4225,14 @@ snapshots:
       parse-json: 5.2.0
     optionalDependencies:
       typescript: 5.9.3
+
+  creem@1.4.5:
+    dependencies:
+      '@modelcontextprotocol/sdk': 1.29.0(zod@4.4.3)
+      zod: 4.4.3
+    transitivePeerDependencies:
+      - '@cfworker/json-schema'
+      - supports-color
 
   cross-spawn@7.0.6:
     dependencies:
@@ -6246,6 +6304,10 @@ snapshots:
   zod-to-json-schema@3.25.2(zod@3.25.76):
     dependencies:
       zod: 3.25.76
+
+  zod-to-json-schema@3.25.2(zod@4.4.3):
+    dependencies:
+      zod: 4.4.3
 
   zod-validation-error@4.0.2(zod@4.4.3):
     dependencies:

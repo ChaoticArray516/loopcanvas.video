@@ -1,7 +1,15 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Image, Wand2, Zap, Shield } from "lucide-react";
+import { ArrowRight, Sparkles, Image, Wand2, Zap, Shield, Star } from "lucide-react";
 import HomeJsonLd from "@/components/seo/HomeJsonLd";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "LoopCanvas AI - Free AI Loop Video Generator | Create Perfect Seamless Loops",
+  description:
+    "Create mesmerizing seamless loop videos with AI. Turn text prompts or images into infinite looping videos. Perfect for Spotify Canvas, website backgrounds, and social media. Free to try.",
+  alternates: { canonical: "/" },
+};
 
 export const revalidate = 3600;
 
@@ -11,6 +19,14 @@ const FeaturesSection = dynamic(() => import("./FeaturesSection"), {
 
 const HowItWorks = dynamic(() => import("./HowItWorks"), {
   loading: () => <HowItWorksSkeleton />,
+});
+
+const SocialProof = dynamic(() => import("@/components/SocialProof"), {
+  loading: () => <div className="h-80 animate-pulse bg-muted/20" />,
+});
+
+const FAQSection = dynamic(() => import("@/components/FAQSection"), {
+  loading: () => <div className="h-96 animate-pulse bg-muted/20" />,
 });
 
 function FeaturesSectionSkeleton() {
@@ -34,7 +50,7 @@ function FeaturesSectionSkeleton() {
 
 function HowItWorksSkeleton() {
   return (
-    <section className="bg-muted/30 px-4 py-20 sm:px-6 lg:px-8">
+    <section className="bg-muted/20 px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <div className="mx-auto h-9 w-48 animate-pulse rounded-lg bg-muted" />
         <div className="mt-12 grid gap-8 sm:grid-cols-3">
@@ -57,10 +73,15 @@ export default function HomePage() {
       <HomeJsonLd />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            AI Loop Video Generator
+      <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        {/* Gradient Glows */}
+        <div className="hero-glow-primary" />
+        <div className="hero-glow-accent" />
+
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
+          <h1 className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            Create Mesmerizing{" "}
+            <span className="gradient-text">Loop Videos</span> with AI
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             Turn text prompts or photos into mesmerizing seamless loop videos.
@@ -84,37 +105,49 @@ export default function HomePage() {
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/text-to-loop"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              className="btn-primary inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-base font-medium"
             >
               <Wand2 className="h-5 w-5" />
               Try Text-to-Loop
             </Link>
             <Link
               href="/photo-to-loop"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-8 py-3.5 text-base font-medium transition-colors hover:bg-muted"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-8 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-white/5"
             >
               <Image className="h-5 w-5" />
               Upload Image
             </Link>
+          </div>
+
+          {/* Social Proof Micro */}
+          <div className="mt-8 flex items-center justify-center gap-6 text-sm text-muted-foreground">
+            <span className="flex items-center gap-1">
+              <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+              4.9/5
+            </span>
+            <span>10,000+ creators</span>
+            <span>50,000+ loops generated</span>
           </div>
         </div>
       </section>
 
       <FeaturesSection />
       <HowItWorks />
+      <SocialProof />
+      <FAQSection />
 
       {/* Bottom CTA */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl rounded-3xl bg-primary px-8 py-16 text-center text-primary-foreground">
-          <h2 className="font-display text-3xl font-bold tracking-tight">
+        <div className="mx-auto max-w-3xl rounded-3xl bg-gradient-to-br from-brand-600 to-brand-800 px-8 py-16 text-center">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-white">
             Ready to create your first loop?
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-primary-foreground/80">
+          <p className="mx-auto mt-4 max-w-lg text-white/80">
             Join thousands of artists and creators making stunning loop videos with AI.
           </p>
           <Link
             href="/text-to-loop"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-background px-8 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-background/90"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-brand-700 transition-colors hover:bg-white/90"
           >
             Start Creating Free
             <ArrowRight className="h-5 w-5" />

@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { Check, Zap } from "lucide-react";
 import PricingJsonLd from "@/components/seo/PricingJsonLd";
+import { createServerClient } from "@supabase/ssr";
+import { cookies } from "next/headers";
+import CheckoutButton from "@/components/CheckoutButton";
 
 export const metadata = {
   title: "Pricing",
@@ -11,7 +14,21 @@ export const metadata = {
   },
 };
 
-const plans = [
+const CREEM_PRO_PRODUCT_ID = process.env.CREEM_PRO_PRODUCT_ID || "prod_loopcanvas_pro";
+const CREEM_TEAM_PRODUCT_ID = process.env.CREEM_TEAM_PRODUCT_ID || "prod_loopcanvas_team";
+
+interface Plan {
+  name: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  cta: string;
+  highlighted: boolean;
+  productId?: string;
+}
+
+const plans: Plan[] = [
   {
     name: "Free",
     price: "$0",
@@ -25,7 +42,6 @@ const plans = [
       "Community support",
     ],
     cta: "Get Started",
-    ctaHref: "/text-to-loop",
     highlighted: false,
   },
   {
@@ -43,8 +59,8 @@ const plans = [
       "Priority support",
     ],
     cta: "Upgrade to Pro",
-    ctaHref: "/checkout?plan=pro",
     highlighted: true,
+    productId: CREEM_PRO_PRODUCT_ID,
   },
   {
     name: "Team",
@@ -63,12 +79,34 @@ const plans = [
       "API access (coming soon)",
     ],
     cta: "Contact Sales",
-    ctaHref: "mailto:team@loopcanvas.video",
     highlighted: false,
+    productId: CREEM_TEAM_PRODUCT_ID,
   },
 ];
 
-export default function PricingPage() {
+async function getUser() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+
+  const cookieStore = await cookies();
+  const supabase = createServerClient(url, key, {
+    cookies: {
+      getAll() {
+        return cookieStore.getAll();
+      },
+    },
+  });
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  return user;
+}
+
+export default async function PricingPage() {
+  const user = await getUser();
+
   return (
     <>
       <PricingJsonLd />
@@ -76,7 +114,7 @@ export default function PricingPage() {
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
-            <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
               Simple, transparent pricing
             </h1>
             <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
@@ -127,16 +165,26 @@ export default function PricingPage() {
                   ))}
                 </ul>
 
-                <Link
-                  href={plan.ctaHref}
-                  className={`mt-8 block w-full rounded-full py-3 text-center text-sm font-medium transition-colors ${
-                    plan.highlighted
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                      : "border border-border bg-background hover:bg-muted"
-                  }`}
-                >
-                  {plan.cta}
-                </Link>
+                {plan.name === "Free" ? (
+                  <Link
+                    href="/text-to-loop"
+                    className="mt-8 block w-full rounded-full py-3 text-center text-sm font-medium transition-colors border border-border bg-background hover:bg-muted"
+                  >
+                    {plan.cta}
+                  </Link>
+                ) : (
+                  <CheckoutButton
+                    productId={plan.productId!}
+                    userId={user?.id}
+                    className={`mt-8 block w-full rounded-full py-3 text-center text-sm font-medium transition-colors ${
+                      plan.highlighted
+                        ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                        : "border border-border bg-background hover:bg-muted"
+                    }`}
+                  >
+                    {plan.cta}
+                  </CheckoutButton>
+                )}
               </div>
             ))}
           </div>

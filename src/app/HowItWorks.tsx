@@ -18,15 +18,15 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-muted/30 px-4 py-20 sm:px-6 lg:px-8">
+    <section className="bg-white/[0.02] px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
-        <h2 className="text-center font-display text-3xl font-bold tracking-tight">
+        <h2 className="text-center font-heading text-3xl font-bold tracking-tight">
           How it works
         </h2>
         <div className="mt-12 grid gap-8 sm:grid-cols-3">
           {steps.map((item) => (
             <div key={item.step} className="text-center">
-              <span className="font-display text-5xl font-bold text-primary/20">
+              <span className="font-heading text-5xl font-bold text-brand-500/20">
                 {item.step}
               </span>
               <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>

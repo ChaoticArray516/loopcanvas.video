@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Syne } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site-config";
@@ -10,13 +10,15 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  weight: ["400", "500", "600"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-display",
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  weight: ["700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -87,10 +89,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${inter.variable} ${syne.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
-        {/* Google Tag Manager — loads after user interaction */}
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href={SITE_URL} />
+      </head>
+      <body className="min-h-full flex flex-col bg-[#0A0A0F] text-[#F8FAFC]">
+        {/* Google Tag Manager */}
         <Script
           id="gtm"
           strategy="afterInteractive"
@@ -101,6 +108,18 @@ export default function RootLayout({
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-XXXXXXX');
+            `,
+          }}
+        />
+        {/* Crisp Chat — lazyOnload */}
+        <Script
+          id="crisp-chat"
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.$crisp=[];
+              window.CRISP_WEBSITE_ID="YOUR_CRISP_WEBSITE_ID";
+              (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
             `,
           }}
         />

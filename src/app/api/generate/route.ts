@@ -1,15 +1,34 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateWithFallback } from "@/lib/openrouter";
+import { creditGuard, deductCredit } from "@/lib/credit-guard";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
 /**
  * POST /api/generate
  * Text-to-loop video generation
- *
- * Request Body: { prompt: string }
- * Response: { videoUrl: string, model: string, creditsRemaining: number }
- *
- * TODO: Phase 4c — 接入 creditGuard + Supabase auth + credits 扣减
  */
+
+// Lazy-initialized service role client
+let _supabase: SupabaseClient | null = null;
+function getSupabase(): SupabaseClient {
+  if (!_supabase) {
+    _supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+  }
+  return _supabase;
+}
+
+async function getUserIdFromRequest(request: NextRequest): Promise<string | null> {
+  const authHeader = request.headers.get("authorization");
+  if (!authHeader?.startsWith("Bearer ")) return null;
+
+  const token = authHeader.slice(7);
+  const { data: { user }, error } = await getSupabase().auth.getUser(token);
+  if (error || !user) return null;
+  return user.id;
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -41,14 +60,25 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // TODO: Phase 4c — creditGuard check
-    // const guard = await creditGuard(userId);
-    // if (!guard.allowed) {
-    //   return NextResponse.json(
-    //     { error: "CREDITS_EXHAUSTED", upgradeUrl: "/pricing" },
-    //     { status: 402 }
-    //   );
-    // }
+    // Credit guard check
+    const userId = await getUserIdFromRequest(request);
+    if (!userId) {
+      return NextResponse.json(
+        { error: "AUTH_REQUIRED", message: "Please sign in to generate videos" },
+        { status: 401 }
+      );
+    }
+
+    const guard = await creditGuard(userId);
+    if (!guard.allowed) {
+      return NextResponse.json(
+        {
+          error: guard.reason ?? "CREDITS_EXHAUSTED",
+          upgradeUrl: guard.upgradeUrl ?? "/pricing",
+        },
+        { status: 402 }
+      );
+    }
 
     // Call OpenRouter with fallback chain
     const result = await generateWithFallback("text_line_art", prompt.trim(), {
@@ -56,13 +86,13 @@ export async function POST(request: NextRequest) {
       timeoutMs: 60000,
     });
 
-    // TODO: Phase 4c — deduct credits
-    // await supabase.from("credits").update({ used: used + 1 }).eq("user_id", userId);
+    // Deduct credit
+    const creditsRemaining = await deductCredit(userId);
 
     return NextResponse.json({
       videoUrl: result.videoUrl,
       model: result.model,
-      creditsRemaining: 999, // TODO: Phase 4c — real credits
+      creditsRemaining,
     });
   } catch (error) {
     console.error("[API /generate] Error:", error);
@@ -81,7 +111,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Keep GET for health check (existing placeholder behavior)
+// Keep GET for health check
 export async function GET() {
   return NextResponse.json({ ok: true, endpoint: "/api/generate" });
 }

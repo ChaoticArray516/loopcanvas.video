@@ -1,18 +1,99 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, Zap } from "lucide-react";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
 interface User {
   email: string;
-  credits: number;
+  id: string;
+}
+
+interface Subscription {
+  plan: string;
+  status: string;
+  provider_customer_id: string | null;
+}
+
+// Lazy init — returns null if env vars are missing (graceful degradation)
+function getSupabase(): SupabaseClient | null {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+  return createClient(url, key);
 }
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  // TODO: replace with real auth hook (Supabase)
-  const [user] = useState<User | null>(null);
+  const [user, setUser] = useState<User | null>(null);
+  const [subscription, setSubscription] = useState<Subscription | null>(null);
+  const [credits, setCredits] = useState<number>(0);
+  const supabaseRef = useRef<SupabaseClient | null>(null);
+
+  useEffect(() => {
+    const supabase = getSupabase();
+    if (!supabase) return; // env vars missing — stay in logged-out state
+    supabaseRef.current = supabase;
+
+    // Get initial session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user) {
+        setUser({
+          email: session.user.email ?? "",
+          id: session.user.id,
+        });
+        fetchSubscription(session.user.id);
+        fetchCredits(session.user.id);
+      }
+    });
+
+    // Listen for auth changes
+    const { data: { subscription: authSub } } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        if (session?.user) {
+          setUser({
+            email: session.user.email ?? "",
+            id: session.user.id,
+          });
+          fetchSubscription(session.user.id);
+          fetchCredits(session.user.id);
+        } else {
+          setUser(null);
+          setSubscription(null);
+          setCredits(0);
+        }
+      }
+    );
+
+    return () => {
+      authSub.unsubscribe();
+    };
+  }, []);
+
+  async function fetchSubscription(userId: string) {
+    const sb = supabaseRef.current ?? getSupabase();
+    if (!sb) return;
+    const { data } = await sb
+      .from("subscriptions")
+      .select("plan, status, provider_customer_id")
+      .eq("user_id", userId)
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .single();
+    if (data) setSubscription(data);
+  }
+
+  async function fetchCredits(userId: string) {
+    const sb = supabaseRef.current ?? getSupabase();
+    if (!sb) return;
+    const { data } = await sb
+      .from("credits")
+      .select("total, used")
+      .eq("user_id", userId)
+      .single();
+    if (data) setCredits(data.total - data.used);
+  }
 
   const navLinks = [
     { label: "Text-to-Loop", href: "/text-to-loop" },
@@ -21,6 +102,8 @@ export default function Header() {
     { label: "Blog", href: "/blog" },
     { label: "Pricing", href: "/pricing" },
   ];
+
+  const isSubActive = subscription?.status === "active" || subscription?.status === "trialing";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
@@ -49,20 +132,44 @@ export default function Header() {
           {user ? (
             <>
               <span className="text-sm text-muted-foreground">
-                {user.credits} credits
+                {credits} credits
               </span>
-              <Link
-                href="/profile"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground"
-              >
-                {user.email}
-              </Link>
-              <Link
-                href="/api/auth/signout"
-                className="rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-              >
-                Sign Out
-              </Link>
+              <div className="relative group">
+                <button className="text-sm font-medium text-muted-foreground hover:text-foreground">
+                  {user.email}
+                </button>
+                {/* Dropdown */}
+                <div className="absolute right-0 top-full mt-2 w-56 rounded-xl border border-border/50 bg-card p-2 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <Link
+                    href="/profile"
+                    className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+                  >
+                    Profile
+                  </Link>
+                  {isSubActive && subscription?.provider_customer_id ? (
+                    <Link
+                      href={`/portal?customer_id=${subscription.provider_customer_id}`}
+                      className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+                    >
+                      Manage Subscription
+                    </Link>
+                  ) : (
+                    <Link
+                      href="/pricing"
+                      className="block rounded-lg px-3 py-2 text-sm font-medium text-primary hover:bg-muted"
+                    >
+                      Upgrade
+                    </Link>
+                  )}
+                  <div className="my-1 border-t border-border/50" />
+                  <Link
+                    href="/api/auth/signout"
+                    className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+                  >
+                    Sign Out
+                  </Link>
+                </div>
+              </div>
             </>
           ) : (
             <>
@@ -114,7 +221,7 @@ export default function Header() {
               {user ? (
                 <>
                   <span className="text-sm text-muted-foreground">
-                    {user.email} — {user.credits} credits
+                    {user.email} — {credits} credits
                   </span>
                   <Link
                     href="/profile"
@@ -123,6 +230,23 @@ export default function Header() {
                   >
                     Profile
                   </Link>
+                  {isSubActive && subscription?.provider_customer_id ? (
+                    <Link
+                      href={`/portal?customer_id=${subscription.provider_customer_id}`}
+                      className="text-base font-medium text-muted-foreground hover:text-foreground"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      Manage Subscription
+                    </Link>
+                  ) : (
+                    <Link
+                      href="/pricing"
+                      className="text-base font-medium text-primary hover:text-primary/80"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      Upgrade
+                    </Link>
+                  )}
                   <Link
                     href="/api/auth/signout"
                     className="text-base font-medium text-muted-foreground hover:text-foreground"
