@@ -26,10 +26,18 @@ function getSupabase(): SupabaseClient | null {
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [subscription, setSubscription] = useState<Subscription | null>(null);
   const [credits, setCredits] = useState<number>(0);
   const supabaseRef = useRef<SupabaseClient | null>(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const supabase = getSupabase();
@@ -106,7 +114,14 @@ export default function Header() {
   const isSubActive = subscription?.status === "active" || subscription?.status === "trialing";
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
+    <header
+      className={
+        "sticky top-0 z-50 w-full border-b transition-colors duration-300 " +
+        (scrolled
+          ? "border-border/60 bg-[#0A0A0F]/95 backdrop-blur-xl"
+          : "border-border/40 bg-background/80 backdrop-blur-md")
+      }
+    >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight">

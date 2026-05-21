@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site-config";
 import { Header, Footer } from "@/components/layout";
+import GlobalSchema from "@/components/seo/GlobalSchema";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -123,6 +124,7 @@ export default function RootLayout({
             `,
           }}
         />
+        <GlobalSchema />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

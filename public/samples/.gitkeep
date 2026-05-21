@@ -1,0 +1,6 @@
+# This directory is kept in git but video files are ignored.
+#
+# To generate sample videos:
+#   cd test/scripts && node generate-samples.mjs
+#
+# Requires: FAL_KEY environment variable

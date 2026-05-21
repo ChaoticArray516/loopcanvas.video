@@ -6,3 +6,4 @@ export { default as BlogListJsonLd } from "./BlogListJsonLd";
 export { default as PillarArticleJsonLd } from "./PillarArticleJsonLd";
 export { default as HowToArticleJsonLd } from "./HowToArticleJsonLd";
 export { default as SupportArticleJsonLd } from "./SupportArticleJsonLd";
+export { default as GlobalSchema } from "./GlobalSchema";

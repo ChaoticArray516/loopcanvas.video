@@ -135,8 +135,10 @@ export async function callOpenRouter(
     choices: { message: { content: string } }[];
   };
 
-  // TODO: Phase 4b 中替换为真实视频生成 API 调用
-  // 当前返回占位视频 URL（用于框架验证）
+  // Note: This is a text-based generation endpoint.
+  // For actual video generation, use the fal.ai sample generator:
+  //   node test/scripts/generate-samples.mjs
+  // The API routes below return the first available sample video for demo purposes.
   const videoUrl = `/samples/nature-ocean-1.mp4`;
 
   return {
