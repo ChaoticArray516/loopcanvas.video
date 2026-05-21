@@ -32,6 +32,30 @@ export default function Header() {
   const [credits, setCredits] = useState<number>(0);
   const supabaseRef = useRef<SupabaseClient | null>(null);
 
+  async function fetchSubscription(userId: string) {
+    const sb = supabaseRef.current ?? getSupabase();
+    if (!sb) return;
+    const { data } = await sb
+      .from("subscriptions")
+      .select("plan, status, provider_customer_id")
+      .eq("user_id", userId)
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .single();
+    if (data) setSubscription(data);
+  }
+
+  async function fetchCredits(userId: string) {
+    const sb = supabaseRef.current ?? getSupabase();
+    if (!sb) return;
+    const { data } = await sb
+      .from("credits")
+      .select("total, used")
+      .eq("user_id", userId)
+      .single();
+    if (data) setCredits(data.total - data.used);
+  }
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -78,30 +102,6 @@ export default function Header() {
       authSub.unsubscribe();
     };
   }, []);
-
-  async function fetchSubscription(userId: string) {
-    const sb = supabaseRef.current ?? getSupabase();
-    if (!sb) return;
-    const { data } = await sb
-      .from("subscriptions")
-      .select("plan, status, provider_customer_id")
-      .eq("user_id", userId)
-      .order("created_at", { ascending: false })
-      .limit(1)
-      .single();
-    if (data) setSubscription(data);
-  }
-
-  async function fetchCredits(userId: string) {
-    const sb = supabaseRef.current ?? getSupabase();
-    if (!sb) return;
-    const { data } = await sb
-      .from("credits")
-      .select("total, used")
-      .eq("user_id", userId)
-      .single();
-    if (data) setCredits(data.total - data.used);
-  }
 
   const navLinks = [
     { label: "Text-to-Loop", href: "/text-to-loop" },
