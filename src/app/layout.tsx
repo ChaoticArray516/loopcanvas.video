@@ -77,16 +77,6 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
     creator: "@loopcanvas",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    shortcut: ["/favicon-32x32.png"],
-  },
   alternates: {
     canonical: "/",
   },
@@ -106,6 +96,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href={SITE_URL} />
+        {/* Extra icon sizes — app/favicon.ico handled by Next.js automatically */}
+        <link rel="icon" type="image/png" href="/icon-512x512.png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link rel="shortcut icon" href="/favicon-32x32.png" />
       </head>
       <body className="min-h-full flex flex-col bg-[#0A0A0F] text-[#F8FAFC]">
         {/* Google Tag Manager */}

@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Image, Wand2, Zap, Shield, Star } from "lucide-react";
+import { ArrowRight, Sparkles, Image, Wand2, Zap, Shield } from "lucide-react";
 import HomeJsonLd from "@/components/seo/HomeJsonLd";
 import HeroVideoWall from "@/components/HeroVideoWall";
 import type { Metadata } from "next";
@@ -124,12 +124,12 @@ export default function HomePage() {
 
             {/* Social Proof Micro */}
             <div className="mt-8 flex items-center justify-center gap-6 text-sm text-muted-foreground lg:justify-start">
-              <span className="flex items-center gap-1">
-                <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-                4.9/5
+              <span className="flex items-center gap-1.5">
+                <Shield className="h-4 w-4 text-primary" /> No credit card required
               </span>
-              <span>10,000+ creators</span>
-              <span>50,000+ loops generated</span>
+              <span className="flex items-center gap-1.5">
+                <Zap className="h-4 w-4 text-primary" /> Free 5 generations daily
+              </span>
             </div>
           </div>
 
@@ -150,7 +150,7 @@ export default function HomePage() {
             Ready to create your first loop?
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-white/80">
-            Join thousands of artists and creators making stunning loop videos with AI.
+            Create stunning loop videos with AI. Free to try, no credit card required.
           </p>
           <Link
             href="/text-to-loop"

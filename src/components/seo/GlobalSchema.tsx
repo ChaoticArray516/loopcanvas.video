@@ -61,12 +61,7 @@ const SOFTWARE_APP = {
     "infinite loop video",
     "AI video generator",
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "10000",
-    bestRating: "5",
-  },
+  // aggregateRating removed until we have real user reviews
 };
 
 const ORGANIZATION = {

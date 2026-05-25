@@ -4,32 +4,11 @@ import { Star } from "lucide-react";
 import AnimatedCounter from "./AnimatedCounter";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const stats = [
-  { target: 10000, suffix: "+", label: "Creators" },
-  { target: 50000, suffix: "+", label: "Loops Generated" },
-  { target: 49, suffix: "/5", label: "Average Rating", prefix: "4." },
-];
+// Stats hidden until we have real user data
+const stats: Array<{ target: number; suffix: string; label: string; prefix?: string }> = [];
 
-const testimonials = [
-  {
-    name: "Alex Rivera",
-    role: "Independent Musician",
-    content: "LoopCanvas transformed my Spotify profile. The Canvas videos look professional and loop perfectly.",
-    avatar: "AR",
-  },
-  {
-    name: "Sarah Chen",
-    role: "Digital Artist",
-    content: "I've tried every AI video tool out there. LoopCanvas is the only one that guarantees seamless loops every time.",
-    avatar: "SC",
-  },
-  {
-    name: "Marcus Johnson",
-    role: "Creative Director",
-    content: "Our agency uses LoopCanvas for client projects. The commercial license and HD exports are game changers.",
-    avatar: "MJ",
-  },
-];
+// Testimonials hidden until we have real user feedback
+const testimonials: Array<{ name: string; role: string; content: string; avatar: string }> = [];
 
 const useCases = ["Spotify Canvas", "Website Backgrounds", "Instagram Reels", "TikTok", "YouTube Shorts", "Digital Art"];
 
