@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { Upload, Loader2, Download, AlertCircle, X, ImageIcon } from "lucide-react";
-
-type Status = "idle" | "generating" | "success" | "error";
+import { useState, useEffect, useCallback } from "react";
+import { Upload, Download, AlertCircle, RotateCcw, X, ImageIcon } from "lucide-react";
+import { useVideoGeneration } from "@/hooks/useVideoGeneration";
+import { createClient } from "@supabase/supabase-js";
 
 const ACCEPTED_TYPES = [
   "image/jpeg",
@@ -14,26 +14,50 @@ const ACCEPTED_TYPES = [
 const MAX_SIZE_MB = 20;
 const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
 
+function getSupabase() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+  return createClient(url, key);
+}
+
+function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string;
+      resolve(result);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
 export default function PhotoUpload() {
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
-  const [status, setStatus] = useState<Status>("idle");
-  const [videoUrl, setVideoUrl] = useState<string | null>(null);
-  const [errorMsg, setErrorMsg] = useState("");
   const [isDragging, setIsDragging] = useState(false);
+  const [authToken, setAuthToken] = useState<string>("");
 
-  // TODO: replace with real auth + credits hook
-  const credits: number = 5;
-  const isLoggedIn = false;
+  const {
+    generate,
+    status,
+    videoUrl,
+    error,
+    isLoading,
+    progress,
+    reset,
+  } = useVideoGeneration();
 
-  const creditsStatus =
-    !isLoggedIn
-      ? "guest"
-      : credits === 0
-        ? "depleted"
-        : credits <= 2
-          ? "low"
-          : "normal";
+  useEffect(() => {
+    const sb = getSupabase();
+    if (!sb) return;
+    sb.auth.getSession().then(({ data: { session } }) => {
+      if (session?.access_token) {
+        setAuthToken(session.access_token);
+      }
+    });
+  }, []);
 
   function validateFile(file: File): string | null {
     if (!ACCEPTED_TYPES.includes(file.type)) {
@@ -48,15 +72,12 @@ export default function PhotoUpload() {
   function handleFile(selected: File) {
     const err = validateFile(selected);
     if (err) {
-      setErrorMsg(err);
-      setStatus("error");
+      reset();
       return;
     }
     setFile(selected);
     setPreview(URL.createObjectURL(selected));
-    setStatus("idle");
-    setErrorMsg("");
-    setVideoUrl(null);
+    reset();
   }
 
   const handleDrop = useCallback((e: React.DragEvent) => {
@@ -74,83 +95,37 @@ export default function PhotoUpload() {
   function clearFile() {
     setFile(null);
     setPreview(null);
-    setVideoUrl(null);
-    setStatus("idle");
-    setErrorMsg("");
+    reset();
   }
 
   async function handleGenerate() {
-    if (!file || status === "generating" || creditsStatus === "depleted") return;
+    if (!file || isLoading) return;
 
-    setStatus("generating");
-    setVideoUrl(null);
-    setErrorMsg("");
-
-    try {
-      const formData = new FormData();
-      formData.append("image", file);
-
-      const res = await fetch("/api/photo-to-line", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!res.ok) {
-        const data = (await res.json()) as { error?: string; message?: string };
-        if (res.status === 402) {
-          setErrorMsg(data.message || "Credits exhausted. Upgrade to Pro for more generations.");
-        } else {
-          setErrorMsg(data.message || `Generation failed (${res.status}). Please try again.`);
-        }
-        setStatus("error");
-        return;
-      }
-
-      const data = (await res.json()) as {
-        videoUrl: string;
-        model: string;
-        creditsRemaining: number;
-      };
-      setVideoUrl(data.videoUrl);
-      setStatus("success");
-    } catch {
-      setErrorMsg("Network error. Please check your connection and try again.");
-      setStatus("error");
-    }
+    const imageBase64 = await fileToBase64(file);
+    await generate(
+      {
+        mode: "image",
+        prompt: "Transform this image into a seamless looping video",
+        imageBase64,
+        aspectRatio: "9:16",
+      },
+      authToken
+    );
   }
 
-  const canGenerate =
-    file !== null && status !== "generating" && creditsStatus !== "depleted";
+  const canGenerate = file !== null && !isLoading;
+
+  const statusLabel: Record<string, string> = {
+    idle: "Ready to generate",
+    submitting: "Submitting...",
+    InQueue: "In queue...",
+    InProgress: `Generating... ${progress}%`,
+    Succeed: "Complete!",
+    Failed: "Failed",
+  };
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-6">
-      {/* Credits badge */}
-      <div className="flex items-center justify-between">
-        <label className="text-sm font-medium text-muted-foreground">
-          Upload a photo to animate
-        </label>
-        {creditsStatus === "guest" && (
-          <span className="text-xs text-muted-foreground">
-            Sign in for more generations
-          </span>
-        )}
-        {creditsStatus === "normal" && (
-          <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-700">
-            {credits} credits left
-          </span>
-        )}
-        {creditsStatus === "low" && (
-          <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-700">
-            {credits} credits left — low
-          </span>
-        )}
-        {creditsStatus === "depleted" && (
-          <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-700">
-            No credits — upgrade to Pro
-          </span>
-        )}
-      </div>
-
       {/* Drop zone */}
       {!preview ? (
         <div
@@ -203,10 +178,10 @@ export default function PhotoUpload() {
           disabled={!canGenerate}
           className="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {status === "generating" ? (
+          {isLoading ? (
             <>
-              <Loader2 className="h-4 w-4 animate-spin" />
-              Generating loop...
+              <div className="h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground/30 border-t-primary-foreground" />
+              {statusLabel[status]}
             </>
           ) : (
             <>
@@ -217,15 +192,23 @@ export default function PhotoUpload() {
         </button>
       )}
 
-      {/* Result area */}
-      {status === "generating" && (
-        <div className="space-y-3 rounded-2xl border border-border/50 bg-card p-6">
-          <div className="aspect-[9/16] max-h-[400px] w-full animate-pulse rounded-xl bg-muted" />
-          <div className="h-4 w-2/3 animate-pulse rounded bg-muted" />
+      {/* Progress bar */}
+      {isLoading && (
+        <div className="space-y-2">
+          <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
+            <div
+              className="h-full rounded-full bg-primary transition-all duration-500"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          <p className="text-center text-xs text-muted-foreground">
+            {statusLabel[status]}
+          </p>
         </div>
       )}
 
-      {status === "success" && videoUrl && (
+      {/* Result — success */}
+      {status === "Succeed" && videoUrl && (
         <div className="space-y-4 rounded-2xl border border-border/50 bg-card p-6">
           <div className="overflow-hidden rounded-xl bg-black">
             <video
@@ -241,23 +224,46 @@ export default function PhotoUpload() {
             <span className="text-sm text-muted-foreground">
               Your loop is ready!
             </span>
-            <a
-              href={videoUrl}
-              download
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              <Download className="h-4 w-4" />
-              Download MP4
-            </a>
+            <div className="flex items-center gap-2">
+              <a
+                href={videoUrl}
+                download
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                <Download className="h-4 w-4" />
+                Download MP4
+              </a>
+              <button
+                onClick={clearFile}
+                className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted"
+              >
+                <RotateCcw className="h-4 w-4" />
+                New
+              </button>
+            </div>
           </div>
         </div>
       )}
 
-      {status === "error" && (
-        <div className="flex items-center gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+      {/* Error */}
+      {status === "Failed" && error && (
+        <div className="flex items-center gap-3 rounded-xl border border-red-200/20 bg-red-500/10 p-4 text-sm text-red-400">
           <AlertCircle className="h-5 w-5 shrink-0" />
-          {errorMsg || "Something went wrong. Please try again."}
+          <div className="flex-1">{error}</div>
+          <button
+            onClick={reset}
+            className="rounded-full border border-red-200/20 px-3 py-1 text-xs hover:bg-red-500/20"
+          >
+            Retry
+          </button>
         </div>
+      )}
+
+      {/* Guest hint */}
+      {!authToken && (
+        <p className="text-center text-xs text-muted-foreground">
+          Sign in for more generations and to save your videos
+        </p>
       )}
     </div>
   );
