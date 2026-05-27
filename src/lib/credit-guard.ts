@@ -50,34 +50,36 @@ export async function creditGuard(userId: string): Promise<CreditGuardResult> {
   }
 
   // Free or inactive Pro/Team → check credits
-  let { data: credits } = await getSupabase()
+  const { data: credits, error: creditsError } = await getSupabase()
     .from("credits")
     .select("total, used")
     .eq("user_id", userId)
     .single();
 
-  // Auto-create default Free credits for new users (graceful fallback if table missing)
+  // Table does not exist — fallback to default allowance
+  if (creditsError?.code === "PGRST205") {
+    return {
+      allowed: true,
+      plan: "Free",
+      creditsRemaining: 5,
+    };
+  }
+
+  // Auto-create default Free credits for new users
   if (!credits) {
-    try {
-      const { data: newCredits } = await getSupabase()
-        .from("credits")
-        .upsert({
-          user_id: userId,
-          total: 5,
-          used: 0,
-          reset_at: new Date(Date.now() + 86400000).toISOString(),
-        })
-        .select("total, used")
-        .single();
-      credits = newCredits;
-    } catch {
-      // Table may not exist — fallback to default allowance for E2E testing
-      return {
-        allowed: true,
-        plan: "Free",
-        creditsRemaining: 5,
-      };
-    }
+    const { data: newCredits } = await getSupabase()
+      .from("credits")
+      .upsert({
+        user_id: userId,
+        total: 5,
+        used: 0,
+        reset_at: new Date(Date.now() + 86400000).toISOString(),
+      })
+      .select("total, used")
+      .single();
+    return newCredits
+      ? { allowed: true, plan: "Free", creditsRemaining: newCredits.total }
+      : { allowed: false, plan: "Free", creditsRemaining: 0, reason: "NO_USER", upgradeUrl: "/pricing" };
   }
 
   if (!credits) {
