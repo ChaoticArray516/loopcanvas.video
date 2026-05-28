@@ -101,6 +101,32 @@ const POLL_CONFIG = {
 // ─────────────────────────────────────────────
 
 /**
+ * 裁剪/缩放图片到目标宽高比，返回新的 base64 Data URL。
+ * I2V 模型会根据输入图片比例决定输出视频比例，因此必须预处理。
+ */
+export async function resizeImageToAspectRatio(
+  dataUrl: string,
+  targetWidth: number,
+  targetHeight: number
+): Promise<string> {
+  // Dynamic import to avoid build-time errors if PIL is not available
+  const { default: sharp } = await import("sharp");
+
+  const base64 = dataUrl.split(",")[1];
+  const buffer = Buffer.from(base64, "base64");
+
+  const resized = await sharp(buffer)
+    .resize(targetWidth, targetHeight, {
+      fit: "cover",
+      position: "center",
+    })
+    .toFormat("jpeg", { quality: 90 })
+    .toBuffer();
+
+  return `data:image/jpeg;base64,${resized.toString("base64")}`;
+}
+
+/**
  * 提交视频生成任务
  * @returns requestId — 用于后续轮询状态
  */
@@ -110,6 +136,14 @@ export async function submitVideoJob(
 ): Promise<SubmitResponse> {
   const imageSize =
     ASPECT_RATIO_TO_SIZE[request.aspectRatio ?? "9:16"];
+
+  let imageBase64 = request.mode === "image" ? request.imageBase64 : undefined;
+
+  // I2V: pre-process image to target aspect ratio so the model outputs correct dimensions
+  if (request.mode === "image") {
+    const [targetW, targetH] = imageSize.split("x").map(Number);
+    imageBase64 = await resizeImageToAspectRatio(imageBase64!, targetW, targetH);
+  }
 
   // 构造请求体
   const body: Record<string, unknown> =
@@ -124,7 +158,7 @@ export async function submitVideoJob(
       : {
           model: "Wan-AI/Wan2.2-I2V-A14B" satisfies VideoModel,
           prompt: request.prompt,
-          image: request.imageBase64,
+          image: imageBase64,
           negative_prompt: request.negativePrompt,
           image_size: imageSize,
           seed: request.seed,
