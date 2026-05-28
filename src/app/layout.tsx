@@ -116,7 +116,7 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Crisp Chat — lazyOnload */}
+        {/* Crisp Chat — lazyOnload (disabled until real CRISP_WEBSITE_ID is configured in Phase 6 / SOP-6-03)
         <Script
           id="crisp-chat"
           strategy="lazyOnload"
@@ -128,6 +128,7 @@ export default function RootLayout({
             `,
           }}
         />
+        */}
         <GlobalSchema />
         <Header />
         <main className="flex-1">{children}</main>

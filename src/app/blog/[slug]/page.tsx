@@ -482,6 +482,63 @@ For more context on choosing the right setup, see our [complete guide to AI loop
 ];
 
 /* ═══════════════════════════════════════════════════════════════
+   Markdown helpers
+   ═══════════════════════════════════════════════════════════════ */
+
+function parseInlineMarkdown(text: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  let remaining = text;
+  let key = 0;
+
+  // Combined regex for links and bold: process links first, then bold
+  while (remaining.length > 0) {
+    const linkMatch = remaining.match(/^(.*?)\[([^\]]+)\]\(([^)]+)\)(.*)$/);
+    if (linkMatch) {
+      const [, before, linkText, href, after] = linkMatch;
+      if (before) {
+        parts.push(...parseBold(before, key));
+        key += before.split("**").length;
+      }
+      parts.push(
+        <Link
+          key={`link-${key}`}
+          href={href}
+          className="text-brand-400 hover:text-brand-300 hover:underline"
+        >
+          {linkText}
+        </Link>
+      );
+      key++;
+      remaining = after;
+    } else {
+      parts.push(...parseBold(remaining, key));
+      break;
+    }
+  }
+  return parts;
+}
+
+function parseBold(text: string, startKey: number): React.ReactNode[] {
+  const parts: React.ReactNode[] = [];
+  const segments = text.split("**");
+  segments.forEach((seg, i) => {
+    if (seg) {
+      const key = startKey + i;
+      parts.push(
+        i % 2 === 1 ? (
+          <strong key={`bold-${key}`} className="text-foreground font-semibold">
+            {seg}
+          </strong>
+        ) : (
+          <span key={`text-${key}`}>{seg}</span>
+        )
+      );
+    }
+  });
+  return parts;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    Page exports
    ═══════════════════════════════════════════════════════════════ */
 
@@ -635,14 +692,14 @@ export default async function BlogPostPage({
               return (
                 <ul key={i} className="mt-4 list-disc space-y-1 pl-6 text-muted-foreground">
                   {items.map((item, j) => (
-                    <li key={j}>{item.replace("- ", "")}</li>
+                    <li key={j}>{parseInlineMarkdown(item.replace("- ", ""))}</li>
                   ))}
                 </ul>
               );
             }
             return (
               <p key={i} className="mt-4 leading-relaxed text-muted-foreground">
-                {para}
+                {parseInlineMarkdown(para)}
               </p>
             );
           })}
