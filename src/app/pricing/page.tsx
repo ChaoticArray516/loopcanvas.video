@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Check, Zap } from "lucide-react";
 import PricingJsonLd from "@/components/seo/PricingJsonLd";
-import { createServerClient } from "@supabase/ssr";
-import { cookies } from "next/headers";
 import CheckoutButton from "@/components/CheckoutButton";
 
 export const metadata = {
@@ -84,28 +82,7 @@ const plans: Plan[] = [
   },
 ];
 
-async function getUser() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return null;
-
-  const cookieStore = await cookies();
-  const supabase = createServerClient(url, key, {
-    cookies: {
-      getAll() {
-        return cookieStore.getAll();
-      },
-    },
-  });
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  return user;
-}
-
-export default async function PricingPage() {
-  const user = await getUser();
+export default function PricingPage() {
 
   return (
     <>
@@ -175,7 +152,6 @@ export default async function PricingPage() {
                 ) : (
                   <CheckoutButton
                     productId={plan.productId!}
-                    userId={user?.id}
                     className={`mt-8 block w-full rounded-full py-3 text-center text-sm font-medium transition-colors ${
                       plan.highlighted
                         ? "bg-primary text-primary-foreground hover:bg-primary/90"

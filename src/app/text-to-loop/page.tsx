@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import PromptInput from "@/components/VideoGenerator/PromptInput";
 
 export const metadata = {
@@ -9,11 +10,7 @@ export const metadata = {
   },
 };
 
-export default function TextToLoopPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ prompt?: string }>;
-}) {
+export default function TextToLoopPage() {
   return (
     <div className="flex flex-1 flex-col items-center px-4 py-16 sm:px-6 lg:py-24">
       <div className="text-center">
@@ -25,17 +22,17 @@ export default function TextToLoopPage({
         </p>
       </div>
       <div className="mt-10 w-full">
-        <PromptInputAsync searchParams={searchParams} />
+        <Suspense
+          fallback={
+            <div className="mx-auto w-full max-w-2xl space-y-6">
+              <div className="h-32 animate-pulse rounded-xl bg-muted" />
+              <div className="h-12 animate-pulse rounded-full bg-muted" />
+            </div>
+          }
+        >
+          <PromptInput />
+        </Suspense>
       </div>
     </div>
   );
-}
-
-async function PromptInputAsync({
-  searchParams,
-}: {
-  searchParams: Promise<{ prompt?: string }>;
-}) {
-  const { prompt } = await searchParams;
-  return <PromptInput initialPrompt={prompt || ""} />;
 }

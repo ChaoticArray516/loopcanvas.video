@@ -1,13 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Wand2, Download, AlertCircle, RotateCcw } from "lucide-react";
 import { useVideoGeneration } from "@/hooks/useVideoGeneration";
 import { createBrowserClient } from "@supabase/ssr";
-
-interface Props {
-  initialPrompt?: string;
-}
 
 function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -16,7 +13,9 @@ function getSupabase() {
   return createBrowserClient(url, key);
 }
 
-export default function PromptInput({ initialPrompt = "" }: Props) {
+export default function PromptInput() {
+  const searchParams = useSearchParams();
+  const initialPrompt = searchParams.get("prompt") || "";
   const [prompt, setPrompt] = useState(initialPrompt);
   const [authToken, setAuthToken] = useState<string>("");
 
