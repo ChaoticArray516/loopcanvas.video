@@ -32,7 +32,7 @@ export default function CheckoutButton({
 
   return (
     <Link
-      href={`/checkout?product_id=${productId}&referenceId=${userId}&success_url=/profile`}
+      href={`/checkout?productId=${productId}&referenceId=${userId}&successUrl=/profile`}
       className={className}
     >
       {children}
