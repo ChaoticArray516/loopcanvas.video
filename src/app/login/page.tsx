@@ -3,33 +3,14 @@
 import { useState, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { createClient } from "@supabase/supabase-js";
+import { createBrowserClient } from "@supabase/ssr";
 import { Zap, Mail, Lock, Eye, EyeOff, AlertCircle } from "lucide-react";
 
-interface SupabaseClient {
-  auth: {
-    signInWithPassword: (credentials: {
-      email: string;
-      password: string;
-    }) => Promise<{
-      data: { session: { user: { id: string; email?: string } } | null };
-      error: { message: string } | null;
-    }>;
-    signInWithOAuth: (config: {
-      provider: string;
-      options: { redirectTo: string };
-    }) => Promise<{
-      data: { url: string | null };
-      error: { message: string } | null;
-    }>;
-  };
-}
-
-function getSupabase(): SupabaseClient | null {
+function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return null;
-  return createClient(url, key) as unknown as SupabaseClient;
+  return createBrowserClient(url, key);
 }
 
 function LoginForm() {
@@ -82,7 +63,7 @@ function LoginForm() {
     }
   }
 
-  async function handleOAuth(provider: string) {
+  async function handleOAuth(provider: "google") {
     const supabase = getSupabase();
     if (!supabase) {
       setError("Authentication service is not configured.");

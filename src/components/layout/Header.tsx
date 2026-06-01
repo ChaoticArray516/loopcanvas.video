@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, Zap } from "lucide-react";
-import { createClient, SupabaseClient } from "@supabase/supabase-js";
+import { createBrowserClient } from "@supabase/ssr";
 
 interface User {
   email: string;
@@ -17,11 +17,11 @@ interface Subscription {
 }
 
 // Lazy init — returns null if env vars are missing (graceful degradation)
-function getSupabase(): SupabaseClient | null {
+function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return null;
-  return createClient(url, key);
+  return createBrowserClient(url, key);
 }
 
 export default function Header() {
@@ -30,7 +30,7 @@ export default function Header() {
   const [user, setUser] = useState<User | null>(null);
   const [subscription, setSubscription] = useState<Subscription | null>(null);
   const [credits, setCredits] = useState<number>(0);
-  const supabaseRef = useRef<SupabaseClient | null>(null);
+  const supabaseRef = useRef<ReturnType<typeof getSupabase>>(null);
 
   async function fetchSubscription(userId: string) {
     const sb = supabaseRef.current ?? getSupabase();
