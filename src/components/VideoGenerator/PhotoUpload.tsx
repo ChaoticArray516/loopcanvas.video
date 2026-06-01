@@ -69,23 +69,29 @@ export default function PhotoUpload() {
     return null;
   }
 
-  function handleFile(selected: File) {
-    const err = validateFile(selected);
-    if (err) {
+  const handleFile = useCallback(
+    (selected: File) => {
+      const err = validateFile(selected);
+      if (err) {
+        reset();
+        return;
+      }
+      setFile(selected);
+      setPreview(URL.createObjectURL(selected));
       reset();
-      return;
-    }
-    setFile(selected);
-    setPreview(URL.createObjectURL(selected));
-    reset();
-  }
+    },
+    [reset]
+  );
 
-  const handleDrop = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(false);
-    const dropped = e.dataTransfer.files[0];
-    if (dropped) handleFile(dropped);
-  }, []);
+  const handleDrop = useCallback(
+    (e: React.DragEvent) => {
+      e.preventDefault();
+      setIsDragging(false);
+      const dropped = e.dataTransfer.files[0];
+      if (dropped) handleFile(dropped);
+    },
+    [handleFile]
+  );
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     const selected = e.target.files?.[0];
@@ -160,6 +166,7 @@ export default function PhotoUpload() {
           >
             <X className="h-4 w-4" />
           </button>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={preview}
             alt="Upload preview"

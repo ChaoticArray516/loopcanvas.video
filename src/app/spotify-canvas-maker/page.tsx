@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Music, CheckCircle2, Zap, Image } from "lucide-react";
+import { ArrowRight, Music, CheckCircle2, Zap, ImageIcon } from "lucide-react";
 import SpotifyCanvasJsonLd from "@/components/seo/SpotifyCanvasJsonLd";
 
 export const revalidate = 3600;
@@ -51,7 +51,7 @@ export default function SpotifyCanvasPage() {
             href="/photo-to-loop"
             className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            <Image className="h-5 w-5" />
+            <ImageIcon className="h-5 w-5" />
             Create Your Canvas
             <ArrowRight className="h-5 w-5" />
           </Link>

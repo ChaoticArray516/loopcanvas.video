@@ -20,9 +20,9 @@ const VIDEOS: VideoItem[] = [
     label: "Particles",
   },
   {
-    src: "/samples/nature-aurora-1.mp4",
-    poster: "/samples/nature-aurora-1-thumb.jpg",
-    label: "Aurora",
+    src: "/samples/nature-sunset-1.mp4",
+    poster: "/samples/nature-sunset-1-thumb.jpg",
+    label: "Sunset",
   },
 ];
 

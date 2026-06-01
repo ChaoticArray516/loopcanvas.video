@@ -1,4 +1,4 @@
-import { SITE_URL, SITE_NAME } from "@/lib/site-config";
+import { SITE_URL } from "@/lib/site-config";
 
 interface HowToStepItem {
   name: string;

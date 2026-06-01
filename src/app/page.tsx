@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Image, Wand2, Zap, Shield } from "lucide-react";
+import { ArrowRight, Sparkles, ImageIcon, Wand2, Zap, Shield } from "lucide-react";
 import HomeJsonLd from "@/components/seo/HomeJsonLd";
 import HeroVideoWall from "@/components/HeroVideoWall";
 import type { Metadata } from "next";
@@ -117,7 +117,7 @@ export default function HomePage() {
                 href="/photo-to-loop"
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 px-8 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-white/5"
               >
-                <Image className="h-5 w-5" />
+                <ImageIcon className="h-5 w-5" />
                 Upload Image
               </Link>
             </div>

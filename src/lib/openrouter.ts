@@ -131,10 +131,6 @@ export async function callOpenRouter(
     );
   }
 
-  const data = (await response.json()) as {
-    choices: { message: { content: string } }[];
-  };
-
   // Note: This is a text-based generation endpoint.
   // For actual video generation, use the fal.ai sample generator:
   //   node test/scripts/generate-samples.mjs
