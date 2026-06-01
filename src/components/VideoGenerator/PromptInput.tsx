@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Wand2, Download, AlertCircle, RotateCcw } from "lucide-react";
 import { useVideoGeneration } from "@/hooks/useVideoGeneration";
-import { createClient } from "@supabase/supabase-js";
+import { createBrowserClient } from "@supabase/ssr";
 
 interface Props {
   initialPrompt?: string;
@@ -13,7 +13,7 @@ function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return null;
-  return createClient(url, key);
+  return createBrowserClient(url, key);
 }
 
 export default function PromptInput({ initialPrompt = "" }: Props) {

@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Upload, Download, AlertCircle, RotateCcw, X, ImageIcon } from "lucide-react";
 import { useVideoGeneration } from "@/hooks/useVideoGeneration";
-import { createClient } from "@supabase/supabase-js";
+import { createBrowserClient } from "@supabase/ssr";
 
 const ACCEPTED_TYPES = [
   "image/jpeg",
@@ -18,7 +18,7 @@ function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return null;
-  return createClient(url, key);
+  return createBrowserClient(url, key);
 }
 
 function fileToBase64(file: File): Promise<string> {
