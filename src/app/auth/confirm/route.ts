@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
+import { createServerClient, type CookieOptions } from "@supabase/ssr";
+import { cookies } from "next/headers";
 
 /**
  * GET /auth/confirm
  *
  * Email confirmation handler for Supabase Auth.
- * Users clicking the confirmation link in their email land here.
+ * Verifies the OTP token, writes session cookies to the browser,
+ * and redirects the user to the target page.
  */
 
 export async function GET(request: NextRequest) {
@@ -19,7 +21,22 @@ export async function GET(request: NextRequest) {
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
     if (url && key) {
-      const supabase = createClient(url, key);
+      const cookieStore = await cookies();
+      const outgoingCookies: { name: string; value: string; options: CookieOptions }[] = [];
+
+      const supabase = createServerClient(url, key, {
+        cookies: {
+          getAll() {
+            return cookieStore.getAll();
+          },
+          setAll(cookiesToSet) {
+            for (const c of cookiesToSet) {
+              outgoingCookies.push(c);
+            }
+          },
+        },
+      });
+
       const { error } = await supabase.auth.verifyOtp({
         type,
         token_hash,
@@ -31,6 +48,13 @@ export async function GET(request: NextRequest) {
           new URL("/login?error=confirmation_failed", request.url)
         );
       }
+
+      // Attach session cookies to the redirect response
+      const response = NextResponse.redirect(new URL(next, request.url));
+      for (const c of outgoingCookies) {
+        response.cookies.set(c.name, c.value, c.options);
+      }
+      return response;
     }
   }
 
