@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { Upload, Download, AlertCircle, RotateCcw, X, ImageIcon } from "lucide-react";
 import { useVideoGeneration } from "@/hooks/useVideoGeneration";
 import { createBrowserClient } from "@supabase/ssr";
@@ -166,12 +167,16 @@ export default function PhotoUpload() {
           >
             <X className="h-4 w-4" />
           </button>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={preview}
-            alt="Upload preview"
-            className="max-h-[300px] w-full object-contain"
-          />
+          <div className="relative h-[300px] w-full">
+            <Image
+              src={preview}
+              alt="Upload preview"
+              fill
+              unoptimized
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, 600px"
+            />
+          </div>
           <div className="px-4 py-3 text-sm text-muted-foreground">
             {file?.name} — {(file!.size / 1024 / 1024).toFixed(2)} MB
           </div>

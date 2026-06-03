@@ -6,7 +6,7 @@ import HeroVideoWall from "@/components/HeroVideoWall";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "LoopCanvas AI - Free AI Loop Video Generator | Create Perfect Seamless Loops",
+  title: "LoopCanvas AI — Free Loop Video Generator for Spotify & Social",
   description:
     "Create mesmerizing seamless loop videos with AI. Turn text prompts or images into infinite looping videos. Perfect for Spotify Canvas, website backgrounds, and social media. Free to try.",
   alternates: { canonical: "/" },

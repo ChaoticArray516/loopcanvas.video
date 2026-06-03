@@ -20,17 +20,30 @@ function getBlogPosts(): { slug: string; lastModified: string }[] {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const launch = new Date("2026-05-18");
+  const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
-      lastModified: launch,
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
-      url: `${SITE_URL}/spotify-canvas-maker`,
+      url: `${SITE_URL}/text-to-loop`,
       lastModified: launch,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/photo-to-loop`,
+      lastModified: launch,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/spotify-canvas-maker`,
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -50,6 +63,61 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/blog`,
       lastModified: launch,
       changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    // SEO landing pages (Phase 6)
+    {
+      url: `${SITE_URL}/loop-video-generator`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/ai-loop-video`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/seamless-loop-video`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/text-to-video`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/photo-to-video`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/website-background-video`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/ai-video-generator`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/free-loop-video-maker`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/loop-video-for-social-media`,
+      lastModified: now,
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {

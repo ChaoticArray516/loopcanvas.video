@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 interface Props {
@@ -61,13 +62,13 @@ export default function VideoHero({
           className="absolute inset-0 h-full w-full object-cover"
         />
       ) : (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <Image
           src={poster}
           alt="Video poster"
-          width={width}
-          height={height}
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          sizes={`(max-width: ${width}px) 100vw, ${width}px`}
+          className="object-cover"
+          priority
         />
       )}
     </div>

@@ -2,9 +2,9 @@ import { Suspense } from "react";
 import PromptInput from "@/components/VideoGenerator/PromptInput";
 
 export const metadata = {
-  title: "Text-to-Loop",
+  title: "Text-to-Loop Video Generator — Free AI Tool | LoopCanvas",
   description:
-    "Turn text prompts into mesmerizing seamless loop videos with AI. Describe any scene and watch it come to life.",
+    "Turn any text prompt into a mesmerizing seamless loop video with AI. Free text-to-loop generator. No signup required. HD export. Perfect for Spotify Canvas and social media.",
   alternates: {
     canonical: "/text-to-loop",
   },

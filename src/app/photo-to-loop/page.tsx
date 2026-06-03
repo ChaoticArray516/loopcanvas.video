@@ -1,9 +1,9 @@
 import PhotoUpload from "@/components/VideoGenerator/PhotoUpload";
 
 export const metadata = {
-  title: "Photo-to-Loop",
+  title: "Photo-to-Loop Video — Turn Images into AI Videos | LoopCanvas",
   description:
-    "Upload any photo and transform it into an animated seamless loop video with AI.",
+    "Upload any photo and transform it into an animated seamless loop video with AI. Free photo-to-loop generator. No signup required. HD export.",
   alternates: {
     canonical: "/photo-to-loop",
   },
