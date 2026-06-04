@@ -47,3 +47,4 @@ next-env.d.ts
 /public/samples/*.jpg
 /public/samples/*.png
 /public/samples/*.webp
+lighthouse-*.json
