@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import BlogListJsonLd from "@/components/seo/BlogListJsonLd";
+import Breadcrumb from "@/components/ui/breadcrumb";
 
 export const metadata = {
   title: "Blog",
@@ -130,6 +131,8 @@ export default function BlogPage() {
 
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-6xl">
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
+
           <div className="text-center">
             <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
               Blog
@@ -184,7 +187,7 @@ export default function BlogPage() {
                     href={`/blog/${post.slug}`}
                     className="inline-flex items-center gap-1 text-sm font-medium text-brand-400 hover:text-brand-300"
                   >
-                    Read
+                    {post.title}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>

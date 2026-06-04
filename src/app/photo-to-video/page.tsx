@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ImageIcon, Zap, CheckCircle2, Upload, Palette, Mountain, User, Sparkles, Music } from "lucide-react";
 import LandingPageJsonLd from "@/components/seo/LandingPageJsonLd";
+import Breadcrumb from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";
 
 export const dynamic = "force-static";
@@ -48,7 +49,10 @@ export default function PhotoToVideoPage() {
 
       <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="hero-glow-primary" />
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Photo to Video" }]} />
+
+          <div className="text-center">
           <h1 className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Photo-to-Video AI —{" "}
             <span className="gradient-text">Animate Any Image into a Loop</span>
@@ -61,7 +65,8 @@ export default function PhotoToVideoPage() {
             <Link href="/photo-to-loop" className="btn-primary inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-base font-medium">
               <Upload className="h-5 w-5" /> Upload Photo
             </Link>
-          </div>
+        </div>
+        </div>
         </div>
       </section>
 

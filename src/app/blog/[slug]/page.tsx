@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, Calendar, ArrowRight } from "lucide-react";
+import { SITE_URL } from "@/lib/site-config";
 import {
   PillarArticleJsonLd,
   HowToArticleJsonLd,
@@ -1030,7 +1031,7 @@ export default async function BlogPostPage({
     );
   }
 
-  const url = `${process.env.NEXT_PUBLIC_SITE_URL || "https://loopcanvas.video"}/blog/${slug}`;
+  const url = `${SITE_URL}/blog/${slug}`;
 
   const paragraphs = article.content
     .trim()
@@ -1072,7 +1073,7 @@ export default async function BlogPostPage({
 
       <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:py-16">
         {/* Breadcrumb */}
-        <nav className="mb-8 text-sm text-muted-foreground">
+        <nav className="mb-8 text-sm text-muted-foreground" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-foreground">
             Home
           </Link>

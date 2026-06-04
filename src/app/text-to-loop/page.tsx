@@ -1,8 +1,9 @@
 import { Suspense } from "react";
+import Breadcrumb from "@/components/ui/breadcrumb";
 import PromptInput from "@/components/VideoGenerator/PromptInput";
 
 export const metadata = {
-  title: "Text-to-Loop Video Generator — Free AI Tool | LoopCanvas",
+  title: "Text-to-Loop Video — Free AI Loop Generator | LoopCanvas",
   description:
     "Turn any text prompt into a mesmerizing seamless loop video with AI. Free text-to-loop generator. No signup required. HD export. Perfect for Spotify Canvas and social media.",
   alternates: {
@@ -13,6 +14,8 @@ export const metadata = {
 export default function TextToLoopPage() {
   return (
     <div className="flex flex-1 flex-col items-center px-4 py-16 sm:px-6 lg:py-24">
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Text-to-Loop" }]} />
+
       <div className="text-center">
         <h1 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
           Text-to-Loop

@@ -1,5 +1,6 @@
-export const SITE_URL =
+const _raw =
   process.env.NEXT_PUBLIC_SITE_URL || "https://loopcanvas.video";
+export const SITE_URL = _raw.replace(/\/$/, "");
 
 export const SITE_NAME = "LoopCanvas AI";
 

@@ -81,6 +81,12 @@ export default function NotFoundPage() {
           <Link href="/spotify-canvas-maker" className="transition-colors hover:text-foreground">
             Spotify Canvas
           </Link>
+          <Link href="/legal/privacy" className="transition-colors hover:text-foreground">
+            Privacy
+          </Link>
+          <Link href="/legal/terms" className="transition-colors hover:text-foreground">
+            Terms
+          </Link>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Wand2, Zap, CheckCircle2, Clock, DollarSign, Award, Monitor, Music, Share2, Globe } from "lucide-react";
 import LandingPageJsonLd from "@/components/seo/LandingPageJsonLd";
+import Breadcrumb from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";
 
 export const dynamic = "force-static";
@@ -47,7 +48,10 @@ export default function TextToVideoPage() {
 
       <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="hero-glow-primary" />
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Text to Video" }]} />
+
+          <div className="text-center">
           <h1 className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Text-to-Video AI —{" "}
             <span className="gradient-text">Describe Any Scene, Watch It Come to Life</span>
@@ -60,7 +64,8 @@ export default function TextToVideoPage() {
             <Link href="/text-to-loop" className="btn-primary inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-base font-medium">
               <Wand2 className="h-5 w-5" /> Try Text-to-Loop
             </Link>
-          </div>
+        </div>
+        </div>
         </div>
       </section>
 
@@ -116,7 +121,7 @@ export default function TextToVideoPage() {
               { prompt: "Starry night sky with slow-moving aurora borealis, deep blue and green, serene", result: "Excellent for ambient backgrounds and relaxation content" },
             ].map((item, i) => (
               <div key={i} className="rounded-xl border border-border/50 bg-card p-5">
-                <p className="text-sm font-medium text-primary">"{item.prompt}"</p>
+                <p className="text-sm font-medium text-primary">&quot;{item.prompt}&quot;</p>
                 <p className="mt-2 text-sm text-muted-foreground">→ {item.result}</p>
               </div>
             ))}

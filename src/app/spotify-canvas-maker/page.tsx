@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Music, CheckCircle2, Zap, ImageIcon, Upload, Play, Headphones, Radio, Guitar, Piano, Drum } from "lucide-react";
 import LandingPageJsonLd from "@/components/seo/LandingPageJsonLd";
+import Breadcrumb from "@/components/ui/breadcrumb";
 import SpotifyCanvasJsonLd from "@/components/seo/SpotifyCanvasJsonLd";
 import type { Metadata } from "next";
 
@@ -54,7 +55,10 @@ export default function SpotifyCanvasPage() {
       {/* Hero */}
       <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="hero-glow-primary" />
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Spotify Canvas Maker" }]} />
+
+          <div className="text-center">
           <h1 className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Spotify Canvas Maker —{" "}
             <span className="gradient-text">AI Loop Videos for Artists</span>
@@ -75,7 +79,8 @@ export default function SpotifyCanvasPage() {
             <Link href="/text-to-loop" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-8 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-white/5">
               <Zap className="h-5 w-5" /> Try Text-to-Loop
             </Link>
-          </div>
+        </div>
+        </div>
         </div>
       </section>
 

@@ -1,3 +1,5 @@
+import Breadcrumb from "@/components/ui/breadcrumb";
+
 export const metadata = {
   title: "Terms of Service",
   alternates: {
@@ -8,6 +10,8 @@ export const metadata = {
 export default function TermsPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:py-20">
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Terms of Service" }]} />
+
       <h1 className="font-display text-3xl font-bold tracking-tight">Terms of Service</h1>
       <p className="mt-2 text-sm text-muted-foreground">Last updated: May 18, 2026</p>
 

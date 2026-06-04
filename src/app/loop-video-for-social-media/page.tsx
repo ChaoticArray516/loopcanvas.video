@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Wand2, ImageIcon, Music, Share2, Zap, CheckCircle2, TrendingUp, Smartphone, Play, MessageCircle } from "lucide-react";
 import LandingPageJsonLd from "@/components/seo/LandingPageJsonLd";
+import Breadcrumb from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";
 
 export const dynamic = "force-static";
@@ -48,7 +49,10 @@ export default function LoopVideoForSocialMediaPage() {
 
       <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="hero-glow-primary" />
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Loop Video for Social Media" }]} />
+
+          <div className="text-center">
           <h1 className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Loop Video for Social Media —{" "}
             <span className="gradient-text">One Tool, All Platforms</span>
@@ -64,7 +68,8 @@ export default function LoopVideoForSocialMediaPage() {
             <Link href="/photo-to-loop" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-8 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-white/5">
               <ImageIcon className="h-5 w-5" /> Upload Image
             </Link>
-          </div>
+        </div>
+        </div>
         </div>
       </section>
 

@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="w-full border-t border-border/40 bg-background">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
           {/* Tools */}
           <div className="flex flex-col gap-3">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
@@ -28,6 +28,55 @@ export default function Footer() {
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               Spotify Canvas Maker
+            </Link>
+            <Link
+              href="/text-to-video"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Text-to-Video
+            </Link>
+            <Link
+              href="/photo-to-video"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Photo-to-Video
+            </Link>
+          </div>
+
+          {/* Solutions */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+              Solutions
+            </h3>
+            <Link
+              href="/loop-video-generator"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Loop Video Generator
+            </Link>
+            <Link
+              href="/ai-loop-video"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              AI Loop Video
+            </Link>
+            <Link
+              href="/seamless-loop-video"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Seamless Loop Video
+            </Link>
+            <Link
+              href="/website-background-video"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Website Background Video
+            </Link>
+            <Link
+              href="/loop-video-for-social-media"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Loop Video for Social
             </Link>
           </div>
 
@@ -53,6 +102,18 @@ export default function Footer() {
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               Pricing
+            </Link>
+            <Link
+              href="/ai-video-generator"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              AI Video Generator
+            </Link>
+            <Link
+              href="/free-loop-video-maker"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Free Loop Video Maker
             </Link>
           </div>
 

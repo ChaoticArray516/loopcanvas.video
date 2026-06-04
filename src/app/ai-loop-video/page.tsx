@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Wand2, ImageIcon, Music, Globe, Share2, CheckCircle2, Zap, Sparkles } from "lucide-react";
 import LandingPageJsonLd from "@/components/seo/LandingPageJsonLd";
+import Breadcrumb from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";
 
 export const dynamic = "force-static";
@@ -43,7 +44,10 @@ export default function AiLoopVideoPage() {
       {/* Hero */}
       <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="hero-glow-primary" />
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "AI Loop Video" }]} />
+
+          <div className="text-center">
           <h1 className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             AI Loop Video —{" "}
             <span className="gradient-text">Turn Ideas into Mesmerizing Infinite Loops</span>
@@ -61,7 +65,8 @@ export default function AiLoopVideoPage() {
               <ImageIcon className="h-5 w-5" />
               Upload Image
             </Link>
-          </div>
+        </div>
+        </div>
         </div>
       </section>
 

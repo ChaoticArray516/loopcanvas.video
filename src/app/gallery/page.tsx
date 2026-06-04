@@ -1,10 +1,11 @@
 import GalleryJsonLd from "@/components/seo/GalleryJsonLd";
+import Breadcrumb from "@/components/ui/breadcrumb";
 import VideoCard from "./VideoCard";
 
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "AI Loop Video Gallery — Browse Seamless Loop Examples | LoopCanvas",
+  title: "Loop Video Gallery — AI Seamless Loop Examples | LoopCanvas",
   description:
     "Browse our gallery of AI-generated seamless loop videos. Examples for Spotify Canvas, website backgrounds, and social media. Get inspired.",
   alternates: {
@@ -143,6 +144,8 @@ export default function GalleryPage() {
 
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-6xl">
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Gallery" }]} />
+
           <div className="text-center">
             <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
               Gallery

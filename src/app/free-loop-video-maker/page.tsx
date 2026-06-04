@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Wand2, CheckCircle2, X, Zap, Infinity, Shield, Crown } from "lucide-react";
 import LandingPageJsonLd from "@/components/seo/LandingPageJsonLd";
+import Breadcrumb from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";
 
 export const dynamic = "force-static";
@@ -47,7 +48,10 @@ export default function FreeLoopVideoMakerPage() {
 
       <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="hero-glow-primary" />
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Free Loop Video Maker" }]} />
+
+          <div className="text-center">
           <h1 className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Free Loop Video Maker —{" "}
             <span className="gradient-text">AI-Powered, No Signup Required</span>
@@ -63,13 +67,14 @@ export default function FreeLoopVideoMakerPage() {
             <Link href="/photo-to-loop" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-8 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-white/5">
               <Zap className="h-5 w-5" /> Upload Photo
             </Link>
-          </div>
+        </div>
+        </div>
         </div>
       </section>
 
       <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">What's Included in the Free Plan?</h2>
+          <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">What&apos;s Included in the Free Plan?</h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {[
               { icon: CheckCircle2, text: "5 generations per day" },

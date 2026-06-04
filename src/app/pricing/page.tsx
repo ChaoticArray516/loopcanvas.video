@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Check, Zap } from "lucide-react";
 import PricingJsonLd from "@/components/seo/PricingJsonLd";
 import CheckoutButton from "@/components/CheckoutButton";
+import Breadcrumb from "@/components/ui/breadcrumb";
 
 export const metadata = {
   title: "Pricing",
@@ -90,6 +91,8 @@ export default function PricingPage() {
 
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-6xl">
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Pricing" }]} />
+
           <div className="text-center">
             <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
               Simple, transparent pricing
