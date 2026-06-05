@@ -23,10 +23,10 @@ export const metadata: Metadata = {
 };
 
 const faqs = [
-  { q: "What makes loop videos perform well on TikTok?", a: "TikTok's algorithm heavily weights watch time and replays. Short 3-5 second seamless loops encourage viewers to watch multiple times, which the algorithm interprets as exceptional engagement. Loops that sync with trending audio perform 3-5x better than unsynchronized content." },
+  { q: "What makes loop videos perform well on TikTok?", a: "TikTok&apos;s algorithm heavily weights watch time and replays. Short 3-5 second seamless loops encourage viewers to watch multiple times, which the algorithm interprets as exceptional engagement. Loops that sync with trending audio perform 3-5x better than unsynchronized content." },
   { q: "How long should a TikTok loop video be?", a: "The sweet spot for TikTok loops is 3-5 seconds. This duration is short enough to encourage replays but long enough to convey a complete visual idea. LoopCanvas supports custom durations so you can experiment with what works best for your content." },
   { q: "Can I create a TikTok loop in under 15 seconds?", a: "Yes! LoopCanvas's 15-second generation mode creates TikTok-optimized loops in record time. Simply choose the TikTok preset, describe your scene, and get a platform-ready loop video in under 15 seconds." },
-  { q: "Do loop videos work with TikTok's algorithm?", a: "Absolutely. TikTok's algorithm specifically rewards content with high replay rates and extended watch time. Loop videos naturally produce both metrics since viewers tend to watch them 5-10 times without realizing it." },
+  { q: "Do loop videos work with TikTok&apos;s algorithm?", a: "Absolutely. TikTok&apos;s algorithm specifically rewards content with high replay rates and extended watch time. Loop videos naturally produce both metrics since viewers tend to watch them 5-10 times without realizing it." },
   { q: "What format does TikTok require?", a: "TikTok uses 9:16 vertical format (1080x1920) with MP4 encoding. LoopCanvas's TikTok preset automatically applies these specifications, ensuring your video uploads without issues." },
   { q: "Can I use AI loop videos for TikTok monetization?", a: "Yes. LoopCanvas Pro includes commercial licensing, allowing you to use generated loops in monetized TikTok content, brand partnerships, and the Creator Fund. The free tier is perfect for personal accounts." },
 ];
@@ -34,7 +34,7 @@ const faqs = [
 const howToSteps = [
   { name: "Select TikTok Preset", text: "Choose the TikTok preset for instant 9:16 vertical format with optimal duration and compression settings." },
   { name: "Describe Your Scene", text: "Enter a vivid text prompt or upload an image. Be bold — TikTok rewards eye-catching, high-energy visuals." },
-  { name: "Generate in 15 Seconds", text: "The AI creates a seamless loop optimized for TikTok's algorithm. Motion, colors, and pacing are tuned for maximum engagement." },
+  { name: "Generate in 15 Seconds", text: "The AI creates a seamless loop optimized for TikTok&apos;s algorithm. Motion, colors, and pacing are tuned for maximum engagement." },
   { name: "Post and Trend", text: "Download your HD MP4 and upload directly to TikTok. Pair with trending audio for maximum reach and virality potential." },
 ];
 
@@ -115,7 +115,7 @@ export default function LoopVideoForTiktokPage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {[
               { icon: Clock, title: "Under 15 Seconds", text: "Generate a complete TikTok-ready loop video in less time than it takes to read this sentence. No queues, no waiting." },
-              { icon: Zap, title: "Algorithm Optimized", text: "Motion speed, color intensity, and visual pacing are automatically tuned for TikTok's engagement patterns." },
+              { icon: Zap, title: "Algorithm Optimized", text: "Motion speed, color intensity, and visual pacing are automatically tuned for TikTok&apos;s engagement patterns." },
               { icon: TrendingUp, title: "Trend Ready", text: "Every loop is designed to pair with trending audio. Rhythmic motion patterns sync naturally with popular sounds." },
             ].map((item) => (
               <div key={item.title} className="glass-card rounded-2xl p-6 text-center">
@@ -153,7 +153,7 @@ export default function LoopVideoForTiktokPage() {
           <div className="mt-10 space-y-4">
             {[
               { title: "Hook in the first frame", text: "TikTok users decide in 0.5 seconds whether to keep watching. Start with bold colors, strong contrast, or immediate motion." },
-              { title: "Sync with trending audio", text: "Loops that match audio beats get 3-5x more replays. Check TikTok's trending sounds and match your loop's tempo." },
+              { title: "Sync with trending audio", text: "Loops that match audio beats get 3-5x more replays. Check TikTok&apos;s trending sounds and match your loop's tempo." },
               { title: "Keep it under 5 seconds", text: "The most viral TikTok loops are 3-5 seconds. Short enough to replay, long enough to impress." },
               { title: "Post consistently", text: "The algorithm rewards regular posting. Generate 5-10 loops in one session and post daily for a week." },
               { title: "Use hashtags strategically", text: "Combine broad hashtags (#fyp #viral) with niche tags (#loopvideo #aigenerated) for maximum discovery." },
