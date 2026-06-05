@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   lint-and-build:
@@ -96,7 +96,7 @@ jobs:
 
   production-deploy:
     name: Vercel Production Deploy
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
     needs: [lighthouse]
     runs-on: ubuntu-latest
     steps:
