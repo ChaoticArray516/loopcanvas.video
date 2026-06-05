@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Wand2, ImageIcon, Smartphone, Heart, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Wand2, ImageIcon, Smartphone, Heart, CheckCircle2, Music } from "lucide-react";
 import LandingPageJsonLd from "@/components/seo/LandingPageJsonLd";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const faqs = [
   { q: "What is the best format for Instagram loop videos?", a: "Instagram Reels and Stories use 9:16 vertical format (1080x1920). For Instagram feed posts, use 1:1 square or 4:5 portrait. LoopCanvas includes built-in presets for all Instagram formats with one-click export." },
-  { q: "How do loop videos increase Instagram engagement?", a: "Seamless loops encourage viewers to watch multiple times, which Instagram's algorithm interprets as high engagement. Reels with loops often see 3-5x higher replay rates than standard video clips, leading to more reach and followers." },
+  { q: "How do loop videos increase Instagram engagement?", a: "Seamless loops encourage viewers to watch multiple times, which Instagram&apos;s algorithm interprets as high engagement. Reels with loops often see 3-5x higher replay rates than standard video clips, leading to more reach and followers." },
   { q: "Can I sync my loop video with trending audio?", a: "Yes. LoopCanvas generates visually rhythmic loops that sync naturally with audio beats. For best results, match your loop's motion speed to the tempo of your chosen trending sound." },
   { q: "What length should Instagram loop videos be?", a: "For Reels, 3-15 seconds is optimal. For Stories, 3-5 seconds works best. For feed posts, 3-10 seconds is ideal. LoopCanvas supports custom durations so you can match any format requirement." },
   { q: "Do I need a business account to post loop videos?", a: "No. Loop videos work on all Instagram account types — personal, creator, and business. However, business and creator accounts get access to more detailed analytics to measure loop performance." },
@@ -33,7 +33,7 @@ const faqs = [
 
 const howToSteps = [
   { name: "Choose Your Format", text: "Select 9:16 for Reels/Stories, 1:1 for feed posts, or 4:5 for portrait feed. LoopCanvas presets handle all technical specs automatically." },
-  { name: "Generate Your Loop", text: "Describe your scene or upload an image. The AI creates a seamless loop optimized for Instagram's algorithm and engagement patterns." },
+  { name: "Generate Your Loop", text: "Describe your scene or upload an image. The AI creates a seamless loop optimized for Instagram&apos;s algorithm and engagement patterns." },
   { name: "Sync with Audio", text: "Match your loop's motion tempo to trending sounds or your own music. Rhythmic loops get 3-5x more replays on Reels." },
   { name: "Export and Post", text: "Download in HD MP4 and upload directly to Instagram. Your loop is optimized for maximum engagement from the first frame." },
 ];
@@ -89,7 +89,7 @@ export default function LoopVideoForInstagramPage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="font-heading text-2xl font-bold sm:text-3xl">Why Loop Videos Dominate Instagram</h2>
           <p className="mt-4 text-muted-foreground">
-            Instagram's algorithm is designed to reward content that keeps users on the platform longer.
+            Instagram&apos;s algorithm is designed to reward content that keeps users on the platform longer.
             Loop videos are uniquely positioned to exploit this mechanism. When a viewer watches a seamless
             loop multiple times — often without consciously realizing it — the algorithm registers extended
             watch time, higher completion rates, and increased engagement signals.
@@ -117,7 +117,7 @@ export default function LoopVideoForInstagramPage() {
               <Smartphone className="h-6 w-6 text-primary" />
               <h3 className="mt-4 font-heading text-lg font-semibold">9:16 Vertical Preset</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Instagram Reels and Stories require 1080x1920 vertical format. LoopCanvas's built-in
+                Instagram Reels and Stories require 1080x1920 vertical format. LoopCanvas&apos;s built-in
                 Instagram preset automatically sets the correct resolution, aspect ratio, and export
                 settings. One click, perfect output every time.
               </p>

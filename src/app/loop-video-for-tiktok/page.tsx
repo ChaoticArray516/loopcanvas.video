@@ -89,7 +89,7 @@ export default function LoopVideoForTiktokPage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="font-heading text-2xl font-bold sm:text-3xl">Why TikTok Loves Loop Videos</h2>
           <p className="mt-4 text-muted-foreground">
-            TikTok's algorithm is the most loop-friendly of any major platform. The app is built on short,
+            TikTok&apos;s algorithm is the most loop-friendly of any major platform. The app is built on short,
             addictive content that keeps users scrolling. Loop videos are the perfect match for this ecosystem —
             their seamless repetition creates a hypnotic effect that naturally extends watch time without any effort
             from the viewer.
