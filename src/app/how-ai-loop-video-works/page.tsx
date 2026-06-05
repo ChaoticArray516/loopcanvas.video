@@ -64,8 +64,8 @@ export default function HowAILoopVideoWorksPage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="font-heading text-2xl font-bold sm:text-3xl">Text-to-Loop vs Photo-to-Loop: Two Paths Through the Same Pipeline</h2>
           <p className="mt-4 text-muted-foreground">Both modes use the same underlying generation pipeline but differ in their input conditioning.</p>
-          <p className="mt-4 text-muted-foreground"><strong>Text-to-Loop</strong> conditions the diffusion model purely on the text embedding. Every pixel and motion vector is synthesized from the prompt. This gives unlimited creative freedom — you can generate scenes that don't exist — but requires more prompt engineering to get consistent results.</p>
-          <p className="mt-4 text-muted-foreground"><strong>Photo-to-Loop</strong> adds a second conditioning signal: the uploaded image. The model uses the image as a visual anchor, generating motion that preserves the original composition, lighting, and subject. This produces more predictable results but constrains creativity to what's visible in the source image.</p>
+          <p className="mt-4 text-muted-foreground"><strong>Text-to-Loop</strong> conditions the diffusion model purely on the text embedding. Every pixel and motion vector is synthesized from the prompt. This gives unlimited creative freedom — you can generate scenes that don&apos;t exist — but requires more prompt engineering to get consistent results.</p>
+          <p className="mt-4 text-muted-foreground"><strong>Photo-to-Loop</strong> adds a second conditioning signal: the uploaded image. The model uses the image as a visual anchor, generating motion that preserves the original composition, lighting, and subject. This produces more predictable results but constrains creativity to what&apos;s visible in the source image.</p>
         </div>
       </section>
 
