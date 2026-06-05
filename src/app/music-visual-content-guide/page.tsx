@@ -63,10 +63,10 @@ export default function MusicVisualContentGuidePage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="font-heading text-2xl font-bold sm:text-3xl">数据背后的逻辑：为什么视觉能驱动播放增长</h2>
           <p className="mt-4 text-muted-foreground">
-            流媒体平台的竞争已经从"谁能被听到"变成了"谁能被记住"。一个听众平均在 3 秒内决定是听完一首歌还是跳过。这 3 秒里，除了音频本身，视觉内容是唯一可以影响决策的变量。
+            流媒体平台的竞争已经从&ldquo;谁能被听到&rdquo;变成了&ldquo;谁能被记住&rdquo;。一个听众平均在 3 秒内决定是听完一首歌还是跳过。这 3 秒里，除了音频本身，视觉内容是唯一可以影响决策的变量。
           </p>
           <p className="mt-4 text-muted-foreground">
-            Spotify 的 Canvas 数据提供了一个清晰的注脚：带 Canvas 的歌曲比没有的获得高达 145% 的互动增量。这不是巧合。当一个听众在歌单里看到你的歌，Canvas 在播放界面提供了一个视觉锚点——它告诉听众"这首歌有完整的视觉包装，是认真制作的作品，值得花时间听完"。
+            Spotify 的 Canvas 数据提供了一个清晰的注脚：带 Canvas 的歌曲比没有的获得高达 145% 的互动增量。这不是巧合。当一个听众在歌单里看到你的歌，Canvas 在播放界面提供了一个视觉锚点——它告诉听众&ldquo;这首歌有完整的视觉包装，是认真制作的作品，值得花时间听完&rdquo;。
           </p>
           <p className="mt-4 text-muted-foreground">
             在社交媒体端，数据同样有力。带视频的帖子分享量是纯文字+图片帖子的 12 倍。TikTok 的算法将观看时长作为核心排名信号——一个 4 秒的循环视频被看了 8 次等于 32 秒的观看时长。这意味着精心制作的循环视频在 TikTok 上有天然的算法优势。
@@ -106,7 +106,7 @@ export default function MusicVisualContentGuidePage() {
             </div>
             <div className="rounded-xl border border-border/50 bg-card p-5">
               <h3 className="font-semibold">案例 2：民谣唱作人 — 社交循环视频带动 3x 粉丝增长</h3>
-              <p className="mt-2 text-sm text-muted-foreground">一位独立民谣音乐人从零开始，用 AI 生成自然风景循环视频（晨雾、溪流、日落），每周在 Instagram 发布 3 次带音乐的循环视频。6 周内粉丝从 800 增长到 2,400。关键策略：每个视频都包含一个"用这个 Canvas 装饰你的 Spotify"的 Call-to-Action。</p>
+              <p className="mt-2 text-sm text-muted-foreground">一位独立民谣音乐人从零开始，用 AI 生成自然风景循环视频（晨雾、溪流、日落），每周在 Instagram 发布 3 次带音乐的循环视频。6 周内粉丝从 800 增长到 2,400。关键策略：每个视频都包含一个&ldquo;用这个 Canvas 装饰你的 Spotify&rdquo;的 Call-to-Action。</p>
             </div>
             <div className="rounded-xl border border-border/50 bg-card p-5">
               <h3 className="font-semibold">案例 3：Hip-Hop 团体 — 跨平台视觉一致性驱动 18% 月收听增长</h3>

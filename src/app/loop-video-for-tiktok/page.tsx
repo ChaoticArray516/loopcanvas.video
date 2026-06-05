@@ -95,13 +95,13 @@ export default function LoopVideoForTiktokPage() {
             from the viewer.
           </p>
           <p className="mt-4 text-muted-foreground">
-            Here's how it works: a 3-second seamless loop watched 10 times registers as 30 seconds of engagement.
+            Here&apos;s how it works: a 3-second seamless loop watched 10 times registers as 30 seconds of engagement.
             The algorithm sees this as exceptional content and pushes it to more users through the For You Page.
             Meanwhile, a 15-second standard clip that gets skipped after 2 seconds signals poor quality and gets buried.
           </p>
           <p className="mt-4 text-muted-foreground">
             The creators who understand this mechanic gain a massive advantage. Loop videos consistently outperform
-            linear clips on TikTok because they hack the platform's core metric: time spent watching. The best part?
+            linear clips on TikTok because they hack the platform&apos;s core metric: time spent watching. The best part?
             TikTok users genuinely enjoy loop content. The hypnotic repetition is satisfying in a way that traditional
             videos cannot replicate.
           </p>

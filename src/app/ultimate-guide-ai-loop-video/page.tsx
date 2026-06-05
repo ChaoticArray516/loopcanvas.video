@@ -80,7 +80,7 @@ export default function UltimateGuidePage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="font-heading text-2xl font-bold sm:text-3xl">How the Technology Actually Works</h2>
           <p className="mt-4 text-muted-foreground">
-            When you type "gentle ocean waves at sunset" into a loop video generator, several things happen in sequence. The prompt goes through a text encoder — typically a CLIP-based model — that converts your words into a dense vector representation. This vector captures not just the nouns ("ocean," "sunset") but the relationships between them: the ocean is the subject, the sunset describes the lighting condition, "gentle" defines the motion speed.
+            When you type &quot;gentle ocean waves at sunset&quot; into a loop video generator, several things happen in sequence. The prompt goes through a text encoder — typically a CLIP-based model — that converts your words into a dense vector representation. This vector captures not just the nouns (&quot;ocean,&quot; &quot;sunset&quot;) but the relationships between them: the ocean is the subject, the sunset describes the lighting condition, &quot;gentle&quot; defines the motion speed.
           </p>
           <p className="mt-4 text-muted-foreground">
             The diffusion model then iteratively denoises a random noise tensor across both spatial dimensions (the pixel grid) and temporal dimensions (16 to 24 frames). At each denoising step, the model consults the prompt vector to steer the output toward your described scene. The critical innovation in loop generators is the circular padding on the temporal axis: frame 0 is conditioned on frame N-1, and frame N-1 is conditioned back on frame 0. This bidirectional temporal attention is what produces the seamless transition.
@@ -154,7 +154,7 @@ export default function UltimateGuidePage() {
             <div>
               <h3 className="font-heading text-xl font-semibold flex items-center gap-2"><Music className="h-5 w-5 text-primary" />Spotify Canvas for Musicians</h3>
               <p className="mt-2 text-muted-foreground">
-                Spotify Canvas is a 3-8 second looping video that plays behind album art in the Now Playing view on Spotify's mobile app. Tracks with Canvas videos see up to 145% more engagement — more saves, more playlist adds, more shares. The format is strict: 9:16 vertical, 1080x1920 pixels, MP4 with H.264, under 8MB, no audio. LoopCanvas includes a Canvas preset that handles all of these specs automatically. For independent musicians without label budgets, this is arguably the highest-ROI visual investment available.
+                Spotify Canvas is a 3-8 second looping video that plays behind album art in the Now Playing view on Spotify&apos;s mobile app. Tracks with Canvas videos see up to 145% more engagement — more saves, more playlist adds, more shares. The format is strict: 9:16 vertical, 1080x1920 pixels, MP4 with H.264, under 8MB, no audio. LoopCanvas includes a Canvas preset that handles all of these specs automatically. For independent musicians without label budgets, this is arguably the highest-ROI visual investment available.
               </p>
             </div>
             <div>

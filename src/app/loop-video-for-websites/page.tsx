@@ -35,7 +35,7 @@ const howToSteps = [
   { name: "Generate Your Loop", text: "Describe your desired background scene or upload an image. Choose from abstract patterns, nature scenes, and soft gradients optimized for web use." },
   { name: "Export in Dual Formats", text: "Download your loop in both WebM and MP4 formats. WebM provides superior compression; MP4 ensures compatibility with all browsers." },
   { name: "Copy Embed Code", text: "Use our embed code generator to get ready-to-paste HTML. Customize autoplay, loop, muted, and responsive behavior with one click." },
-  { name: "Add to Your Site", text: "Paste the code into your website's hero section or landing page. The video automatically scales to fit any screen size." },
+  { name: "Add to Your Site", text: "Paste the code into your website&apos;s hero section or landing page. The video automatically scales to fit any screen size." },
 ];
 
 export default function LoopVideoForWebsitesPage() {
@@ -89,7 +89,7 @@ export default function LoopVideoForWebsitesPage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="font-heading text-2xl font-bold sm:text-3xl">Why Use Loop Videos on Websites?</h2>
           <p className="mt-4 text-muted-foreground">
-            Static websites are becoming a thing of the past. Today's most engaging websites use subtle motion to capture attention,
+            Static websites are becoming a thing of the past. Today&apos;s most engaging websites use subtle motion to capture attention,
             communicate brand personality, and create immersive user experiences. Loop video backgrounds are the perfect solution —
             they add visual dynamism without the performance cost of full-length videos.
           </p>
@@ -159,7 +159,7 @@ export default function LoopVideoForWebsitesPage() {
           </div>
           <p className="mt-4 text-center text-sm text-muted-foreground">
             This code creates a full-screen, responsive background video that works across all modern browsers.
-            Customize the CSS class to match your site's design system.
+            Customize the CSS class to match your site&apos;s design system.
           </p>
         </div>
       </section>

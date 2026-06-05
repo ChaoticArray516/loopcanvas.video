@@ -65,7 +65,7 @@ export default function SpotifyCanvasHandbookPage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="font-heading text-2xl font-bold sm:text-3xl">Spotify Canvas 对独立音乐人意味着什么</h2>
           <p className="mt-4 text-muted-foreground">
-            Spotify 每天上传超过 100,000 首新歌。在如此密集的内容竞争中，仅靠音频本身很难让听众做出"收藏还是跳过"的决定。Canvas 在播放界面提供了一个视觉触点——当你出现在某个歌单里，听众滑到你的曲目时，Canvas 可能是他们停留的第一秒。
+            Spotify 每天上传超过 100,000 首新歌。在如此密集的内容竞争中，仅靠音频本身很难让听众做出&ldquo;收藏还是跳过&rdquo;的决定。Canvas 在播放界面提供了一个视觉触点——当你出现在某个歌单里，听众滑到你的曲目时，Canvas 可能是他们停留的第一秒。
           </p>
           <p className="mt-4 text-muted-foreground">
             Spotify 内部数据显示，Canvas 让歌曲的保存率平均提高 5%，歌单添加率提高 20%，分享率提高 9%。对于独立音乐人来说，这些数字直接转化为算法推荐的曝光量。Spotify 的推荐系统会记录用户行为——如果一个用户在播放你的歌时停留了超过 30 秒并保存了歌曲，算法会认为这首歌有价值，并将其推送给更多类似用户。
@@ -166,7 +166,7 @@ export default function SpotifyCanvasHandbookPage() {
           <div className="mt-8 space-y-6">
             <div>
               <h3 className="font-heading text-lg font-semibold">Week 1: 数据基线</h3>
-              <p className="mt-2 text-muted-foreground">Canvas 上线后的第一周不要做任何更改。记录这首歌曲的保存率、歌单添加数和分享数的基线数据。Spotify for Artists 后台的"音乐"标签页提供这些数据。</p>
+              <p className="mt-2 text-muted-foreground">Canvas 上线后的第一周不要做任何更改。记录这首歌曲的保存率、歌单添加数和分享数的基线数据。Spotify for Artists 后台的&ldquo;音乐&rdquo;标签页提供这些数据。</p>
             </div>
             <div>
               <h3 className="font-heading text-lg font-semibold">Week 2-4: 对比分析</h3>
