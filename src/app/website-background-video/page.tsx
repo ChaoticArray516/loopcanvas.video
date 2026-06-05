@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Wand2, Zap, Code, Gauge, Palette, CheckCircle2, ImageIcon } from "lucide-react";
+import { ArrowRight, Wand2, Code, CheckCircle2 } from "lucide-react";
 import LandingPageJsonLd from "@/components/seo/LandingPageJsonLd";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";

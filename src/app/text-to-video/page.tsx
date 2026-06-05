@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Wand2, CheckCircle2, Clock, DollarSign, Award, Monitor, Music, Share2, Globe } from "lucide-react";
+import { ArrowRight, Wand2, CheckCircle2, Monitor, Music, Share2, Globe } from "lucide-react";
 import LandingPageJsonLd from "@/components/seo/LandingPageJsonLd";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";
