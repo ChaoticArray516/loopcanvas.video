@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ImageIcon, Zap, CheckCircle2, Upload, Palette, Mountain, User, Sparkles, Music } from "lucide-react";
+import { ArrowRight, ImageIcon, CheckCircle2, Upload, Palette, Mountain, User, Sparkles, Music } from "lucide-react";
 import LandingPageJsonLd from "@/components/seo/LandingPageJsonLd";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";

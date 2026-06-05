@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Music, CheckCircle2, Zap, ImageIcon, Upload, Play, Headphones, Radio, Guitar, Piano, Drum } from "lucide-react";
+import { ArrowRight, Music, CheckCircle2, Zap, ImageIcon, Upload, Play, Headphones, Radio, Guitar, Piano } from "lucide-react";
 import LandingPageJsonLd from "@/components/seo/LandingPageJsonLd";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import SpotifyCanvasJsonLd from "@/components/seo/SpotifyCanvasJsonLd";
