@@ -46,7 +46,7 @@ export default function HowAILoopVideoWorksPage() {
           <div className="mt-8 space-y-6">
             <div className="rounded-xl border border-border/50 bg-card p-5">
               <h3 className="font-heading text-lg font-semibold">Layer 1: Text Encoding</h3>
-              <p className="mt-2 text-sm text-muted-foreground">When you type a prompt, a CLIP-based text encoder converts your words into a dense vector — a long list of numbers that represents not just the nouns you used but the relationships between them. "Gentle ocean waves at sunset" and &quot;Violent storm at sea&quot; produce very different vectors even though they share vocabulary. The quality of this encoding determines how faithfully the output matches your intent.</p>
+              <p className="mt-2 text-sm text-muted-foreground">When you type a prompt, a CLIP-based text encoder converts your words into a dense vector — a long list of numbers that represents not just the nouns you used but the relationships between them. &quot;Gentle ocean waves at sunset&quot; and &quot;Violent storm at sea&quot; produce very different vectors even though they share vocabulary. The quality of this encoding determines how faithfully the output matches your intent.</p>
             </div>
             <div className="rounded-xl border border-border/50 bg-card p-5">
               <h3 className="font-heading text-lg font-semibold">Layer 2: Diffusion-Based Video Synthesis</h3>
@@ -72,7 +72,7 @@ export default function HowAILoopVideoWorksPage() {
       <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-heading text-2xl font-bold sm:text-3xl">Why Generation Speed Varies</h2>
-          <p className="mt-4 text-muted-foreground">Several factors affect how long your generation takes. Resolution is the biggest lever — 1080p is 4x the pixels of 720p. Prompt complexity matters too: a simple "blue sky" generates faster than &quot;a cyberpunk city at dusk with neon reflections in rain puddles and flying cars.&quot; Queue priority separates free and paid tiers: free users may wait 2-5 minutes during peak, paid users get dedicated GPU allocation.</p>
+          <p className="mt-4 text-muted-foreground">Several factors affect how long your generation takes. Resolution is the biggest lever — 1080p is 4x the pixels of 720p. Prompt complexity matters too: a simple &quot;blue sky&quot; generates faster than &quot;a cyberpunk city at dusk with neon reflections in rain puddles and flying cars.&quot; Queue priority separates free and paid tiers: free users may wait 2-5 minutes during peak, paid users get dedicated GPU allocation.</p>
           <p className="mt-4 text-muted-foreground">For more on choosing between tools, see our <Link href="/ai-loop-video-tools-compared" className="text-primary hover:underline">complete tool comparison</Link> and <Link href="/ultimate-guide-ai-loop-video" className="text-primary hover:underline">ultimate guide</Link>.</p>
         </div>
       </section>

@@ -99,7 +99,7 @@ export default function AILoopVideoToolsComparedPage() {
           </p>
           <div className="mt-6 space-y-4">
             <div className="rounded-xl border border-border/50 bg-card p-5">
-              <h3 className="font-semibold">1. 你需要的是"通用视频生成"还是"专用循环视频生成"？</h3>
+              <h3 className="font-semibold">1. 你需要的是&ldquo;通用视频生成&rdquo;还是&ldquo;专用循环视频生成&rdquo;？</h3>
               <p className="mt-2 text-sm text-muted-foreground">通用工具（Runway、Pika）可以生成高质量视频，但不保证无缝循环。你需要事后编辑帧匹配合成。专用工具（LoopCanvas）在生成阶段就内置了循环优化。如果你 80% 的产出是循环视频，专用工具节省的手动调整时间是显著的。</p>
             </div>
             <div className="rounded-xl border border-border/50 bg-card p-5">

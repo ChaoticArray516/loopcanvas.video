@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Wand2, ImageIcon, Music, Smartphone, TrendingUp, CheckCircle2, Heart } from "lucide-react";
+import { ArrowRight, Wand2, ImageIcon, Smartphone, Heart } from "lucide-react";
 import LandingPageJsonLd from "@/components/seo/LandingPageJsonLd";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";
