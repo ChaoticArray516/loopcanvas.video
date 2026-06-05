@@ -192,6 +192,37 @@ export default function UltimateGuidePage() {
         </div>
       </section>
 
+      {/* Common Mistakes */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-2xl font-bold sm:text-3xl">Common Mistakes and How to Avoid Them</h2>
+          <div className="mt-8 space-y-6">
+            {[
+              { title: "Vague Prompts", text: "Prompts like 'beautiful scene' produce generic, unfocused results. Instead of 'a beach,' write 'gentle ocean waves washing over white sand at golden hour, warm light shimmering on wet surfaces, slow continuous motion.' Specificity is the single biggest quality lever." },
+              { title: "Ignoring the Loop Point", text: "Always watch your loop for at least 20 continuous cycles before using it. Look specifically at the transition point. If you see any flicker, jump, or color change, regenerate with adjusted settings or a refined prompt." },
+              { title: "Wrong Format", text: "Using 16:9 landscape for Spotify Canvas (requires 9:16 vertical) means painful cropping. Use platform presets — LoopCanvas includes presets for Spotify, Instagram, TikTok, and websites that automatically set correct specs." },
+              { title: "Over-Complicated Motion", text: "Start conservative — 20-40% motion intensity produces the best results for most use cases. Subtle motion is almost always more effective than aggressive motion. You can always increase intensity on regeneration." },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-border/50 bg-card p-5">
+                <h3 className="font-heading text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-muted-foreground">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The Future */}
+      <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-2xl font-bold sm:text-3xl">The Future of AI Loop Video</h2>
+          <p className="mt-4 text-muted-foreground">
+            The technology is evolving rapidly. Real-time generation is the next frontier — current tools take 10-30 seconds; emerging models generate in under 1 second for live, interactive creation. Audio-reactive loops are becoming standard, with AI learning to create motion responding to music tempo and mood. Higher resolutions are arriving quickly — 4K and 8K loop generation is practical for large-format displays. Style consistency is improving with seed controls and style references maintaining visual coherence across a series of loops. Stay ahead by choosing tools actively investing in these capabilities.
+          </p>
+        </div>
+      </section>
+
+
       <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">Frequently Asked Questions</h2>

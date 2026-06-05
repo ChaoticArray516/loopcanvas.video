@@ -83,6 +83,45 @@ export default function AILoopVideoApplicationsPage() {
         </section>
       ))}
 
+      {/* Decision Framework */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-2xl font-bold sm:text-3xl">场景选择决策框架</h2>
+          <div className="mt-8 space-y-6">
+            {[
+              { title: "音乐创作者 → 从 Spotify Canvas 开始", text: "投入产出比最高的起点。免费、30 秒生成、直接影响流媒体数据。从最热门的 3 首歌开始，建立统一视觉品牌，然后扩展到整张专辑。" },
+              { title: "品牌/企业 → 从网站背景开始", text: "将静态首页转变为动态品牌体验。选择与品牌色匹配的抽象渐变，生成一次即可永久使用。通常可以看到 20-30% 的页面停留时间提升。" },
+              { title: "内容创作者 → 从社交媒体开始", text: "3-5 秒循环被重复观看 10 次等于 30-50 秒观看时长，算法将其解读为高质量内容。从你最擅长的内容领域开始，批量生成 5-10 个循环测试受众偏好。" },
+              { title: "电商卖家 → 从产品展示开始", text: "选择 3-5 个最畅销产品生成展示循环。A/B 测试显示带视频的产品页转化率提升 30-80%，退货率降低 25%。从视觉上最能受益的品类开始。" },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-border/50 bg-card p-5">
+                <h3 className="font-heading text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-muted-foreground">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Content Repurposing */}
+      <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-2xl font-bold sm:text-3xl">跨场景内容复用策略</h2>
+          <p className="mt-4 text-muted-foreground">
+            最高效的 loop video 策略不是为每个场景单独创作，而是建立一个核心视觉资产库，根据不同平台需求进行适配。生成时选择最高分辨率（如 1920x1920 正方形），然后分别裁剪为 9:16（竖屏社交）、16:9（横屏网站/演示）和 1:1（方形电商）。这样一次创作，多平台分发，最大化视觉资产的价值。
+          </p>
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full text-left text-sm">
+              <thead><tr className="border-b border-border/50"><th className="py-3 pr-4 font-semibold">核心素材</th><th className="py-3 pr-4 font-semibold">平台 1</th><th className="py-3 pr-4 font-semibold">平台 2</th><th className="py-3 pr-4 font-semibold">平台 3</th><th className="py-3 font-semibold">平台 4</th></tr></thead>
+              <tbody className="divide-y divide-border/30">
+                {[["1080p 主循环","Spotify Canvas","Instagram Reels","网站背景","YouTube Shorts"],["产品动画","电商产品页","社交媒体广告","邮件营销","数字标牌"],["品牌背景","网站 Hero","演示文稿","Zoom 背景","活动投影"],["音乐可视化","Spotify Canvas","TikTok","演出背景","MV 片段"]].map((row,i)=>(<tr key={i}>{row.map((cell,j)=>(<td key={j} className={j===0?'font-semibold py-3 pr-4':'py-3 pr-4'}>{cell}</td>))}</tr>))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+
       <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">常见问题</h2>

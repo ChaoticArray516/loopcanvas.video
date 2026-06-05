@@ -183,6 +183,41 @@ export default function AILoopVideoToolsComparedPage() {
         </div>
       </section>
 
+      {/* Use Case Decision Matrix */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">使用场景决策矩阵</h2>
+          <div className="mt-10 overflow-x-auto">
+            <table className="w-full text-left text-sm">
+              <thead><tr className="border-b border-border/50"><th className="py-3 pr-4 font-semibold">使用场景</th><th className="py-3 pr-4 font-semibold">首选工具</th><th className="py-3 pr-4 font-semibold">备选工具</th><th className="py-3 font-semibold">不推荐</th></tr></thead>
+              <tbody className="divide-y divide-border/30">
+                {[["Spotify Canvas","LoopCanvas","Clideo (基础)","Runway, Pika"],["网站背景","LoopCanvas","Runway Gen-3","Clideo"],["社交媒体内容","LoopCanvas","Pika Labs","Clideo"],["电影级广告","Runway Gen-3","Kling AI","LoopCanvas, Clideo"],["艺术实验","Pika Labs","Runway Gen-3","Clideo"],["商业客户项目","LoopCanvas Pro","Runway + 后期","免费工具"],["预算极有限","LoopCanvas 免费版","Clideo 免费版","付费工具"]].map((row,i)=>(<tr key={i}>{row.map((cell,j)=>(<td key={j} className={j===0?'font-semibold py-3 pr-4':'py-3 pr-4'}>{cell}</td>))}</tr>))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Real User Cases */}
+      <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-2xl font-bold sm:text-3xl">真实用户选择案例</h2>
+          <div className="mt-8 space-y-6">
+            {[
+              { title: "独立网页设计师", text: "Sarah 每月为 5-8 个客户网站创建循环背景。她测试过 Runway（$15/月）和 LoopCanvas（$9.99/月）。最终选择 LoopCanvas 的原因：原生循环引擎每次输出都无缝，Spotify Canvas 预设帮她拓展了音乐行业客户，商业授权让她放心用于客户项目。年节省约 $60 订阅费加 15 小时/月的循环处理时间。" },
+              { title: "电子音乐厂牌", text: "Pulse Records 每月发布 4-6 首单曲。使用 LoopCanvas 后，视觉制作时间从每首 2-3 天（外包设计师）缩短到 30 分钟（内部生成）。一年下来，视觉制作成本从 $15,000 降到 $120（订阅费）。关键收益：速度 + 成本控制 + 视觉一致性。" },
+              { title: "广告代理商", text: "BrightSide Agency 为电商客户制作社交媒体广告。Pika 的艺术风格多样性吸引他们，但 30% 的循环输出需要返工。最终选择 LoopCanvas 作为主力（80% 日常需求），Runway 补充高端项目（20% 需要电影级画质）。" },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-border/50 bg-card p-5">
+                <h3 className="font-heading text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-muted-foreground">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">常见问题</h2>

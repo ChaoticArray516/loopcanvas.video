@@ -139,6 +139,49 @@ export default function MusicVisualContentGuidePage() {
         </div>
       </section>
 
+      {/* 12-Week Timeline */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-2xl font-bold sm:text-3xl">视觉内容生产的 12 周规划</h2>
+          <div className="mt-8 space-y-6">
+            {[
+              { title: "Week 1-2：建立视觉基础", text: "确定品牌视觉关键词（3-5 个）、主色调（2-3 个）和动效风格。为播放量最高的 3 首歌制作 Spotify Canvas。上传并验证移动端显示正常。这是你视觉营销的 MVP。" },
+              { title: "Week 3-4：扩展到社交媒体", text: "将 Canvas 素材改编为 Instagram Reels 和 TikTok 内容。每个 Canvas 生成至少 2 个社交视频。开始每周发布 2-3 次视觉内容。目标是建立发布节奏。" },
+              { title: "Week 5-6：网站与长期资产", text: "为个人网站或 Linktree 创建循环背景。将所有歌曲的 Canvas 统一更新。建立内容日历，规划未来 4 周发布计划。视觉资产开始产生复利效应。" },
+              { title: "Week 7-8：数据驱动优化", text: "检查 Spotify for Artists 和社交媒体分析数据。哪首歌保存率最高？哪个视觉风格互动最多？用数据指导下一步创作方向。替换表现不佳的内容。" },
+              { title: "Week 9-10：规模化与自动化", text: "建立模板化工作流程：新歌发布 → Canvas 生成 → 社交改编 → 网站更新 → 邮件通知。将视觉制作时间从 2 小时压缩到 30 分钟。探索批量生成和预设功能。" },
+              { title: "Week 11-12：迭代与创新", text: "尝试新视觉概念：季节性主题、互动内容（粉丝投票选 Canvas 风格）、跨平台实验。将前 10 周的数据洞察转化为新创意方向。视觉资产体系到此已自运转。" },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-border/50 bg-card p-5">
+                <h3 className="font-heading text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-muted-foreground">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Common Pitfalls */}
+      <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-2xl font-bold sm:text-3xl">避免的常见陷阱</h2>
+          <div className="mt-8 space-y-6">
+            {[
+              { title: "追求视觉完美而忽视音乐", text: "视觉内容是音乐体验的延伸，不是替代品。如果花 90% 时间做 Canvas 只花 10% 做音乐，你本末倒置了。好的视觉能让好音乐传播更远，但不能让平庸的音乐变好。" },
+              { title: "视觉风格不一致", text: "每首歌的 Canvas 看起来像不同艺人做的。这种不一致稀释你的品牌认知。建立视觉规范文档，即使只有简单的颜色和动效速度定义也足够。" },
+              { title: "只发一次就不管了", text: "视觉内容需要重复曝光建立品牌认知。一个 Canvas 不是做完就结束的任务——它应该被改编、复用、重新发布至少 5-10 次，覆盖不同平台和不同时间段。" },
+              { title: "忽视移动端体验", text: "90% 的 Spotify Canvas 观看发生在手机上。在 27 英寸显示器上很棒的设计可能在 6 英寸屏幕上完全失效。始终在手机上预览 Canvas 和社交内容。" },
+            ].map((item) => (
+              <div key={item.title} className="flex items-start gap-3">
+                <span className="mt-0.5 shrink-0 rounded-full bg-red-500/10 px-2 py-0.5 text-xs font-semibold text-red-400">注意</span>
+                <div><h3 className="font-semibold">{item.title}</h3><p className="mt-1 text-sm text-muted-foreground">{item.text}</p></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">常见问题</h2>

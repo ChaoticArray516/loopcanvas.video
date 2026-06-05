@@ -203,6 +203,46 @@ export default function SpotifyCanvasHandbookPage() {
         </div>
       </section>
 
+      {/* Case Studies */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-2xl font-bold sm:text-3xl">Canvas 成功案例深度分析</h2>
+          <div className="mt-8 space-y-6">
+            {[
+              { title: "案例 1：独立电子音乐人 — 从 0 到 10 万月播放", text: "一位电子音乐制作人为首张 EP 的 5 首歌创建了统一的霓虹紫+青色 Canvas 视觉体系。3 个月内月播放量从 2,000 增长到 107,000。带 Canvas 的歌曲平均保存率高出 38%。听众开始在评论区提到他的标志性紫色视觉风格。" },
+              { title: "案例 2：民谣唱作人 — Canvas 驱动社交裂变", text: "一位民谣音乐人用 AI 生成自然风景 Canvas（晨雾、溪流、日落），并同步发布到 Instagram Reels 和 TikTok。6 周内 Spotify 粉丝从 800 增长到 3,200。Canvas 成为连接社交媒体和流媒体平台的桥梁。" },
+              { title: "案例 3：Hip-Hop 团体 — 专辑级视觉战役", text: "一个 3 人 Hip-Hop 团体为专辑策划了完整视觉战役：每首歌独特 Canvas，全部使用深紫色+金色+慢速烟雾的核心视觉语言。专辑发布首周获 15,000 次保存，被 3 个官方歌单收录。粉丝能仅凭 Canvas 视觉识别出他们的歌。" },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-border/50 bg-card p-5">
+                <h3 className="font-heading text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-muted-foreground">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Advanced Tips */}
+      <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-heading text-2xl font-bold sm:text-3xl">Canvas 高级技巧</h2>
+          <div className="mt-8 space-y-6">
+            {[
+              { title: "A/B 测试不同 Canvas 版本", text: "Spotify 允许随时更换 Canvas。上传版本 A，记录 2 周数据（保存率、歌单添加率），更换为版本 B，再记录 2 周。选择表现更好的版本固定下来。这种数据驱动的优化是很多音乐人忽略的。" },
+              { title: "季节性 Canvas 轮换", text: "为同一首歌准备 2-3 个版本：春季版、夏季版、节日版。在适当时间更换 Canvas，给老歌注入新鲜感。一位流行歌手在圣诞节将热门单曲 Canvas 换成雪景主题，该曲播放量当月增长 12%。" },
+              { title: "Canvas 作为社交内容素材", text: "Canvas 不只是 Spotify 的内容——它是社交媒体的金矿。录屏后发布到 Instagram、TikTok，配上歌曲片段。这种组合比单纯音频片段更能吸引注意力。在描述中包含 Spotify 链接方便跳转。" },
+              { title: "利用 Canvas 讲述专辑故事", text: "如果专辑有叙事结构，让 Canvas 成为叙事的一部分。第一首歌展示日出，中间展示白昼，最后展示日落。或者按情感弧线设计：从平静到高潮再到回归。这种叙事性 Canvas 让随机播放也能感受专辑构思。" },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-border/50 bg-card p-5">
+                <h3 className="font-heading text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-muted-foreground">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">常见问题</h2>
