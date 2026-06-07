@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Social Media Loop Video Trends 2026 | LoopCanvas",
+  title: "Social Media Loop Video Trends 2026",
   description: "2026 loop video trends across TikTok, Instagram, and YouTube. Platform strategies, algorithm insights, and growth tactics for creators and brands.",
   alternates: { canonical: "/social-media-loop-trends-2026" },
 };

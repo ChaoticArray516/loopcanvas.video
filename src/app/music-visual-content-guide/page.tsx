@@ -8,12 +8,12 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "音乐人如何利用视觉化内容提升 20% 播放量 | LoopCanvas",
+  title: "音乐人如何利用视觉化内容提升 20% 播放量",
   description:
     "独立音乐人视觉营销实操指南。Spotify Canvas、社交媒体循环视频、网站背景的整合策略。数据驱动的视觉内容方法论。",
   alternates: { canonical: "/music-visual-content-guide" },
   openGraph: {
-    title: "音乐人如何利用视觉化内容提升 20% 播放量 | LoopCanvas",
+    title: "音乐人如何利用视觉化内容提升 20% 播放量",
     description: "独立音乐人视觉营销实操指南。数据驱动的视觉内容方法论。",
     url: "/music-visual-content-guide",
     type: "website",

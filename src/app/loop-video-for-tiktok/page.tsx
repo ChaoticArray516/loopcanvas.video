@@ -8,14 +8,14 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Loop Video for TikTok — AI Short Video Maker | LoopCanvas",
+  title: "Loop Video for TikTok — AI Short Video Maker",
   description:
     "Create seamless loop videos for TikTok. 15-second fast generation, trending audio sync, algorithm-optimized. Free to try. No credit card required.",
   alternates: {
     canonical: "/loop-video-for-tiktok",
   },
   openGraph: {
-    title: "Loop Video for TikTok — AI Short Video Maker | LoopCanvas",
+    title: "Loop Video for TikTok — AI Short Video Maker",
     description: "Create seamless loop videos for TikTok. 15-second fast generation with trending audio sync.",
     url: "/loop-video-for-tiktok",
     type: "website",

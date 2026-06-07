@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "AI Loop Video for Ads — Performance Creative Guide | LoopCanvas",
+  title: "AI Loop Video for Ads — Performance Creative Guide",
   description: "Boost ad creative performance with AI-generated loop videos. Platform strategies for Meta, TikTok, and YouTube ads. Creative testing and CTA design best practices.",
   alternates: { canonical: "/loop-video-ad-creative" },
 };

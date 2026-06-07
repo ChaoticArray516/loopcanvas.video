@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Album Art Animation — Motion Design Guide | LoopCanvas",
+  title: "Album Art Animation — Motion Design Guide",
   description: "Transform static album artwork into animated loop videos. Motion design principles, genre-specific techniques, AI workflows, and technical best practices.",
   alternates: { canonical: "/album-art-motion-design" },
 };

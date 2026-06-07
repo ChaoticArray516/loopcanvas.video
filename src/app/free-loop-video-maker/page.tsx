@@ -8,12 +8,12 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Free Loop Video Maker — Create Seamless Loops | No Signup | LoopCanvas",
+  title: "Free Loop Video Maker — Create Seamless Loops | No Signup",
   description:
     "Create loop videos for free with AI. 5 free generations daily. No credit card required. Turn text or photos into seamless loop videos. HD export.",
   alternates: { canonical: "/free-loop-video-maker" },
   openGraph: {
-    title: "Free Loop Video Maker — Create Seamless Loops | No Signup | LoopCanvas",
+    title: "Free Loop Video Maker — Create Seamless Loops | No Signup",
     description: "Create loop videos for free with AI. 5 free generations daily.",
     url: "/free-loop-video-maker",
     type: "website",

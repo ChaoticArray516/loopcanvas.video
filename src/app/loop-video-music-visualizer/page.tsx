@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "AI Music Visualizer — Sound-Reactive Guide | LoopCanvas",
+  title: "AI Music Visualizer — Sound-Reactive Guide",
   description: "Create AI-generated music visualizer loops. Sound-reactive visuals for YouTube, Canvas, and live shows.",
   alternates: { canonical: "loop-video-music-visualizer" },
 };

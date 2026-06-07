@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Online Course Loop Backgrounds — Educator Guide | LoopCanvas",
+  title: "Online Course Loop Backgrounds — Educator Guide",
   description: "Professional, non-distracting loop backgrounds for online courses and tutorials. Zoom, Teams, OBS setup guides. Brand consistency for course creators.",
   alternates: { canonical: "/online-course-loop-background" },
 };

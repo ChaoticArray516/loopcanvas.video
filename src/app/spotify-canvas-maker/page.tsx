@@ -9,12 +9,12 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Spotify Canvas Maker — AI Loop Video Generator for Artists | LoopCanvas",
+  title: "Spotify Canvas Maker — AI Loop Video Generator for Artists",
   description:
     "Create stunning Spotify Canvas videos with AI. Turn text prompts or images into seamless 3-8 second looping videos optimized for Spotify artist profiles. Free to try.",
   alternates: { canonical: "/spotify-canvas-maker" },
   openGraph: {
-    title: "Spotify Canvas Maker — AI Loop Video Generator for Artists | LoopCanvas",
+    title: "Spotify Canvas Maker — AI Loop Video Generator for Artists",
     description: "Create stunning Spotify Canvas videos with AI.",
     url: "/spotify-canvas-maker",
     type: "website",

@@ -8,12 +8,12 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Seamless Loop Video — How to Create Perfect Loops | LoopCanvas",
+  title: "Seamless Loop Video — How to Create Perfect Loops",
   description:
     "Learn how to create perfectly seamless loop videos with AI. No editing skills needed. First and last frames blend perfectly. Free to try.",
   alternates: { canonical: "/seamless-loop-video" },
   openGraph: {
-    title: "Seamless Loop Video — How to Create Perfect Loops | LoopCanvas",
+    title: "Seamless Loop Video — How to Create Perfect Loops",
     description: "Learn how to create perfectly seamless loop videos with AI.",
     url: "/seamless-loop-video",
     type: "website",

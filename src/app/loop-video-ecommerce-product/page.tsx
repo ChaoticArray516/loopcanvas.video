@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "AI Loop Video for E-Commerce Product Showcase | LoopCanvas",
+  title: "AI Loop Video for E-Commerce Product Showcase",
   description: "Boost e-commerce conversion rates with AI-powered product loop videos. Platform integration for Shopify, Amazon, Instagram Shop. A/B testing and ROI data.",
   alternates: { canonical: "/loop-video-ecommerce-product" },
 };

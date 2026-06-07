@@ -8,14 +8,14 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Loop Video for Instagram — AI Reels & Stories Maker | LoopCanvas",
+  title: "Loop Video for Instagram — AI Reels & Stories Maker",
   description:
     "Create seamless loop videos for Instagram Reels and Stories. 9:16 vertical format, BGM sync, optimized for engagement. Free to try. No credit card required.",
   alternates: {
     canonical: "/loop-video-for-instagram",
   },
   openGraph: {
-    title: "Loop Video for Instagram — AI Reels & Stories Maker | LoopCanvas",
+    title: "Loop Video for Instagram — AI Reels & Stories Maker",
     description: "Create seamless loop videos for Instagram Reels and Stories. 9:16 vertical format with BGM sync.",
     url: "/loop-video-for-instagram",
     type: "website",

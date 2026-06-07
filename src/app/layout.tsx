@@ -25,7 +25,7 @@ const syne = Syne({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    template: `%s | ${SITE_NAME}`,
+    template: `%s | LoopCanvas`,
     default: SITE_NAME,
   },
   description: SITE_DESCRIPTION,

@@ -8,14 +8,14 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Loop Video for Websites — Free HD Background Loops | LoopCanvas",
+  title: "Loop Video for Websites — Free HD Background Loops",
   description:
     "Create seamless loop videos for website backgrounds. WebM + MP4 formats, embed code generator, responsive design. Free to try. No credit card required.",
   alternates: {
     canonical: "/loop-video-for-websites",
   },
   openGraph: {
-    title: "Loop Video for Websites — Free HD Background Loops | LoopCanvas",
+    title: "Loop Video for Websites — Free HD Background Loops",
     description: "Create seamless loop videos for website backgrounds. WebM + MP4 formats with embed code generator.",
     url: "/loop-video-for-websites",
     type: "website",

@@ -8,12 +8,12 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Text-to-Video AI — Free Loop Video Generator | LoopCanvas",
+  title: "Text-to-Video AI — Free Loop Video Generator",
   description:
     "Turn text descriptions into mesmerizing loop videos with AI. Free text-to-video generator. No signup required. HD export. Perfect for Spotify Canvas and social media.",
   alternates: { canonical: "/text-to-video" },
   openGraph: {
-    title: "Text-to-Video AI — Free Loop Video Generator | LoopCanvas",
+    title: "Text-to-Video AI — Free Loop Video Generator",
     description: "Turn text descriptions into mesmerizing loop videos with AI.",
     url: "/text-to-video",
     type: "website",

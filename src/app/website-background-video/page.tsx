@@ -8,12 +8,12 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Website Background Video — Seamless Loop Backgrounds | LoopCanvas",
+  title: "Website Background Video — Seamless Loop Backgrounds",
   description:
     "Create stunning seamless loop videos for website backgrounds. AI-generated, lightweight, autoplay-ready. Free to try. Perfect for landing pages and portfolios.",
   alternates: { canonical: "/website-background-video" },
   openGraph: {
-    title: "Website Background Video — Seamless Loop Backgrounds | LoopCanvas",
+    title: "Website Background Video — Seamless Loop Backgrounds",
     description: "Create stunning seamless loop videos for website backgrounds.",
     url: "/website-background-video",
     type: "website",

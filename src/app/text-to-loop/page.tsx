@@ -3,7 +3,7 @@ import Breadcrumb from "@/components/ui/breadcrumb";
 import PromptInput from "@/components/VideoGenerator/PromptInput";
 
 export const metadata = {
-  title: "Text-to-Loop Video — Free AI Loop Generator | LoopCanvas",
+  title: "Text-to-Loop Video — Free AI Loop Generator",
   description:
     "Turn any text prompt into a mesmerizing seamless loop video with AI. Free text-to-loop generator. No signup required. HD export. Perfect for Spotify Canvas and social media.",
   alternates: {

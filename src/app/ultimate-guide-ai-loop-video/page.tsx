@@ -8,12 +8,12 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Ultimate Guide to AI Loop Video Generators (2026) | LoopCanvas",
+  title: "Ultimate Guide to AI Loop Video Generators (2026)",
   description:
     "Complete guide to AI loop video generators: how they work, what to look for, and which tool fits your needs. Covers text-to-loop, photo-to-loop, Spotify Canvas, and pricing comparisons.",
   alternates: { canonical: "/ultimate-guide-ai-loop-video" },
   openGraph: {
-    title: "Ultimate Guide to AI Loop Video Generators (2026) | LoopCanvas",
+    title: "Ultimate Guide to AI Loop Video Generators (2026)",
     description: "Complete guide to AI loop video generators. How they work, what features matter, and how to choose the right tool.",
     url: "/ultimate-guide-ai-loop-video",
     type: "website",

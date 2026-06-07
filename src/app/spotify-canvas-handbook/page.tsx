@@ -8,12 +8,12 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Spotify Canvas 终极营销手册：独立音乐人视觉化指南 | LoopCanvas",
+  title: "Spotify Canvas 终极营销手册：独立音乐人视觉化指南",
   description:
     "独立音乐人 Spotify Canvas 完整实操手册。Canvas 规格、AI 生成流程、各音乐风格的视觉策略、数据增长案例。2026 年最新版。",
   alternates: { canonical: "/spotify-canvas-handbook" },
   openGraph: {
-    title: "Spotify Canvas 终极营销手册：独立音乐人视觉化指南 | LoopCanvas",
+    title: "Spotify Canvas 终极营销手册：独立音乐人视觉化指南",
     description: "独立音乐人 Spotify Canvas 完整实操手册。规格、AI 生成、风格策略、数据案例。",
     url: "/spotify-canvas-handbook",
     type: "website",

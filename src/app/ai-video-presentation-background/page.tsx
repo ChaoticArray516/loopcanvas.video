@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "AI Video Backgrounds for Presentations — Professional Guide | LoopCanvas",
+  title: "AI Video Backgrounds for Presentations — Professional Guide",
   description: "Create professional loop backgrounds for presentations, pitch decks, and webinars. Platform setup guides for PowerPoint, Keynote, Google Slides, Zoom, and Teams.",
   alternates: { canonical: "/ai-video-presentation-background" },
 };

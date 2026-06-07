@@ -8,12 +8,12 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "AI 循环视频的 10 个创意应用场景 | LoopCanvas",
+  title: "AI 循环视频的 10 个创意应用场景",
   description:
     "AI 循环视频在音乐、电商、网页设计、教育、数字艺术等 10 个领域的具体应用案例。每个场景附带实操建议和技术规格。",
   alternates: { canonical: "/ai-loop-video-applications" },
   openGraph: {
-    title: "AI 循环视频的 10 个创意应用场景 | LoopCanvas",
+    title: "AI 循环视频的 10 个创意应用场景",
     description: "AI 循环视频在音乐、电商、网页设计等 10 个领域的具体应用案例和技术规格。",
     url: "/ai-loop-video-applications",
     type: "website",

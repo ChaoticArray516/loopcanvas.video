@@ -8,12 +8,12 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Photo-to-Video AI — Turn Images into Loop Videos | LoopCanvas",
+  title: "Photo-to-Video AI — Turn Images into Loop Videos",
   description:
     "Upload any photo and transform it into an animated seamless loop video with AI. Free photo-to-video generator. No signup required. HD export.",
   alternates: { canonical: "/photo-to-video" },
   openGraph: {
-    title: "Photo-to-Video AI — Turn Images into Loop Videos | LoopCanvas",
+    title: "Photo-to-Video AI — Turn Images into Loop Videos",
     description: "Upload any photo and transform it into an animated seamless loop video with AI.",
     url: "/photo-to-video",
     type: "website",

@@ -5,7 +5,7 @@ import VideoCard from "./VideoCard";
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "Loop Video Gallery — AI Seamless Loop Examples | LoopCanvas",
+  title: "Loop Video Gallery — AI Seamless Loop Examples",
   description:
     "Browse our gallery of AI-generated seamless loop videos. Examples for Spotify Canvas, website backgrounds, and social media. Get inspired.",
   alternates: {

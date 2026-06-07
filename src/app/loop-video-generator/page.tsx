@@ -8,14 +8,14 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "AI Loop Video Generator — Free Seamless Loops | LoopCanvas",
+  title: "AI Loop Video Generator — Free Seamless Loops",
   description:
     "Create mesmerizing seamless loop videos with our free AI loop video generator. Turn text or photos into infinite loops instantly. Perfect for Spotify Canvas, website backgrounds, and social media.",
   alternates: {
     canonical: "/loop-video-generator",
   },
   openGraph: {
-    title: "AI Loop Video Generator — Free Seamless Loops | LoopCanvas",
+    title: "AI Loop Video Generator — Free Seamless Loops",
     description: "Create mesmerizing seamless loop videos with our free AI loop video generator. Turn text or photos into infinite loops.",
     url: "/loop-video-generator",
   },

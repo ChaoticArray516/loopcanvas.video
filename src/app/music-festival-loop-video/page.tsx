@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Music Festival Loop Video — Stage Visuals Guide | LoopCanvas",
+  title: "Music Festival Loop Video — Stage Visuals Guide",
   description: "AI loop videos for festival stage screens and LED walls. Large-scale display design principles, VJ workflow integration, and technical specs for live performances.",
   alternates: { canonical: "/music-festival-loop-video" },
 };

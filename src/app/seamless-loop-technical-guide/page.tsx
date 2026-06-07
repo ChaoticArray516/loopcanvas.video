@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Seamless Loop Video Technical Guide | LoopCanvas",
+  title: "Seamless Loop Video Technical Guide",
   description: "Master seamless loop video creation. Frame blending, temporal consistency, motion types, platform specs, and format optimization for perfect infinite loops.",
   alternates: { canonical: "/seamless-loop-technical-guide" },
 };

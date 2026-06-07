@@ -8,12 +8,12 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "免费与付费 AI 循环视频工具对比 (2026) | LoopCanvas",
+  title: "免费与付费 AI 循环视频工具对比 (2026)",
   description:
     "2026 年主流 AI 循环视频工具完整对比评测：LoopCanvas、Runway、Pika、Kling、Clideo 等。含价格、功能、输出质量的逐项对比和 ROI 分析。",
   alternates: { canonical: "/ai-loop-video-tools-compared" },
   openGraph: {
-    title: "免费与付费 AI 循环视频工具对比 (2026) | LoopCanvas",
+    title: "免费与付费 AI 循环视频工具对比 (2026)",
     description: "2026 年主流 AI 循环视频工具完整对比评测。价格、功能、输出质量逐项对比。",
     url: "/ai-loop-video-tools-compared",
     type: "website",

@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "How AI Loop Video Generators Work — Technical Breakdown | LoopCanvas",
+  title: "How AI Loop Video Generators Work — Technical Breakdown",
   description: "A plain-English explanation of how AI loop video generators work. Diffusion models, circular time embeddings, prompt engineering, and why dedicated loop engines matter.",
   alternates: { canonical: "/how-ai-loop-video-works" },
 };

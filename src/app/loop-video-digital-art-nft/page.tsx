@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "AI Loop Video for Digital Art & NFT — Complete Artist Guide | LoopCanvas",
+  title: "AI Loop Video for Digital Art & NFT — Complete Artist Guide",
   description: "How artists use AI loop videos for generative art, NFT collections, gallery installations, and digital exhibitions. Platform guides, workflows, and licensing.",
   alternates: { canonical: "/loop-video-digital-art-nft" },
 };

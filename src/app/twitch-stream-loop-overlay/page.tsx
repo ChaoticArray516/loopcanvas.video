@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Twitch Stream Loop Overlays — Complete Streamer Guide | LoopCanvas",
+  title: "Twitch Stream Loop Overlays — Complete Streamer Guide",
   description: "Professional AI loop overlays and backgrounds for Twitch streamers. OBS setup guide, style recommendations by content category, and all stream graphic types.",
   alternates: { canonical: "/twitch-stream-loop-overlay" },
 };

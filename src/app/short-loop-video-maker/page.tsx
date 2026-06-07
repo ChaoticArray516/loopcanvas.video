@@ -8,11 +8,11 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Short Loop Video Maker — AI Fast Generator | LoopCanvas",
+  title: "Short Loop Video Maker — AI Fast Generator",
   description: "Create short loop videos in seconds. Drag-and-drop upload, 3-second render, instant download. Free to try.",
   alternates: { canonical: "/short-loop-video-maker" },
   openGraph: {
-    title: "Short Loop Video Maker — AI Fast Generator | LoopCanvas",
+    title: "Short Loop Video Maker — AI Fast Generator",
     description: "Create short loop videos in seconds. Drag-and-drop upload, 3-second render, instant download.",
     url: "/short-loop-video-maker",
     type: "website",

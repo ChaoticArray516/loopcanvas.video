@@ -8,14 +8,14 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "AI Video Background Generator — Free HD Loops | LoopCanvas",
+  title: "AI Video Background Generator — Free HD Loops",
   description:
     "Generate AI-powered video backgrounds with 4 preset styles. Nature, abstract, urban, and cosmic themes. Perfect for websites, presentations, and content creation. Free to try.",
   alternates: {
     canonical: "/ai-video-background-generator",
   },
   openGraph: {
-    title: "AI Video Background Generator — Free HD Loops | LoopCanvas",
+    title: "AI Video Background Generator — Free HD Loops",
     description: "Generate AI-powered video backgrounds with 4 preset styles. Nature, abstract, urban, and cosmic themes.",
     url: "/ai-video-background-generator",
     type: "website",

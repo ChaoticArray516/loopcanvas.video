@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Spotify Canvas vs Lyric Video — Complete Comparison | LoopCanvas",
+  title: "Spotify Canvas vs Lyric Video — Complete Comparison",
   description: "Compare Spotify Canvas and lyric videos. Technical specs, cost analysis, ROI, use case guidance, and AI creation workflows for musicians and labels.",
   alternates: { canonical: "/spotify-canvas-vs-lyric-video" },
 };

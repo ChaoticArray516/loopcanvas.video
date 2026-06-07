@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "AI Loop Video for Weddings & Events — Ambient Visual Guide | LoopCanvas",
+  title: "AI Loop Video for Weddings & Events — Ambient Visual Guide",
   description: "Beautiful AI loop videos for weddings, parties, and corporate events. Ambient visuals for projection, LED displays, and digital signage.",
   alternates: { canonical: "/loop-video-wedding-event" },
 };

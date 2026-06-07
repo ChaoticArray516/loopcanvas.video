@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Album Release Visual Campaign — Complete Guide | LoopCanvas",
+  title: "Album Release Visual Campaign — Complete Guide",
   description: "Complete visual campaign for album releases with AI loop videos. Timeline, asset checklist, multi-platform strategy, and post-release content plan.",
   alternates: { canonical: "/loop-video-for-music-album-release" },
 };

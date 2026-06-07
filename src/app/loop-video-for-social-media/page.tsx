@@ -8,12 +8,12 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Loop Video for Social Media — AI Generator for All Platforms | LoopCanvas",
+  title: "Loop Video for Social Media — AI Generator for All Platforms",
   description:
     "Create loop videos optimized for Instagram, TikTok, YouTube Shorts, and more. AI-powered seamless loops. Free to try. Perfect for content creators.",
   alternates: { canonical: "/loop-video-for-social-media" },
   openGraph: {
-    title: "Loop Video for Social Media — AI Generator for All Platforms | LoopCanvas",
+    title: "Loop Video for Social Media — AI Generator for All Platforms",
     description: "Create loop videos optimized for Instagram, TikTok, YouTube Shorts, and more.",
     url: "/loop-video-for-social-media",
     type: "website",

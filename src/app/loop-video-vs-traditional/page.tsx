@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "AI Loop Video vs Traditional Production — Complete Comparison | LoopCanvas",
+  title: "AI Loop Video vs Traditional Production — Complete Comparison",
   description: "Compare AI loop video generation with traditional video production. Speed, cost, quality analysis, decision framework, and hybrid workflow recommendations.",
   alternates: { canonical: "/loop-video-vs-traditional" },
 };
