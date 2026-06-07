@@ -7,7 +7,7 @@ const steps = [
   {
     step: "02",
     title: "AI Generates",
-    desc: "Our AI creates a seamless looping video optimized for your use case.",
+    desc: "Our AI loop video generator creates a seamless looping video optimized for your use case.",
   },
   {
     step: "03",
@@ -21,7 +21,7 @@ export default function HowItWorks() {
     <section className="bg-white/[0.02] px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <h2 className="text-center font-heading text-3xl font-bold tracking-tight">
-          How it works
+          How Our AI Loop Video Generator Works
         </h2>
         <div className="mt-12 grid gap-8 sm:grid-cols-3">
           {steps.map((item) => (

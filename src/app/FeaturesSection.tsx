@@ -4,13 +4,13 @@ const features = [
   {
     icon: Wand2,
     title: "Text-to-Loop",
-    desc: "Describe any scene and watch AI generate a seamless looping video in seconds.",
+    desc: "Describe any scene and watch our AI loop video generator create a seamless looping video in seconds.",
     gradient: "from-brand-500/20 to-brand-700/20",
   },
   {
     icon: Image,
     title: "Photo-to-Loop",
-    desc: "Upload any image and transform it into an animated infinite loop video.",
+    desc: "Upload any image and our AI video generator transforms it into an animated infinite loop video.",
     gradient: "from-pink-500/20 to-pink-700/20",
   },
   {
@@ -28,7 +28,7 @@ const features = [
   {
     icon: Zap,
     title: "Lightning Fast",
-    desc: "Generate loop videos in 10-30 seconds. No queues, no waiting.",
+    desc: "Our loop video generator creates videos in 10-30 seconds. No queues, no waiting.",
     gradient: "from-green-500/20 to-green-700/20",
   },
   {
@@ -44,7 +44,7 @@ export default function FeaturesSection() {
     <section className="px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <h2 className="text-center font-heading text-3xl font-bold tracking-tight">
-          Everything you need for perfect loops
+          Everything You Need in an AI Loop Video Generator
         </h2>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (

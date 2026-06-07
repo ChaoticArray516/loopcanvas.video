@@ -6,9 +6,9 @@ import HeroVideoWall from "@/components/HeroVideoWall";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "LoopCanvas AI — Free Loop Video Maker for Spotify & Social",
+  title: "AI Loop Video Generator — Free Seamless Loop Maker | LoopCanvas",
   description:
-    "Create mesmerizing seamless loop videos with AI. Turn text prompts or images into infinite looping videos. Perfect for Spotify Canvas, website backgrounds, and social media. Free to try.",
+    "Free AI loop video generator. Turn text prompts or images into mesmerizing seamless loop videos instantly. Perfect for Spotify Canvas, website backgrounds, and social media. No credit card required.",
   alternates: { canonical: "/" },
 };
 
@@ -83,12 +83,14 @@ export default function HomePage() {
           {/* Left: Text Content */}
           <div className="max-w-2xl text-center lg:text-left">
             <h1 className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Create Mesmerizing{" "}
-              <span className="gradient-text">Loop Videos</span> with AI
+              Free AI Loop Video Generator — Create{" "}
+              <span className="gradient-text">Seamless Loop Videos</span>{" "}
+              Instantly
             </h1>
             <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground lg:mx-0">
-              Turn text prompts or photos into mesmerizing seamless loop videos.
-              Perfect for Spotify Canvas, website backgrounds, and social media.
+              LoopCanvas is a free AI loop video generator that turns text
+              prompts or photos into mesmerizing seamless loop videos. Perfect
+              for Spotify Canvas, website backgrounds, and social media.
             </p>
 
             {/* Trust Badges */}
@@ -147,7 +149,7 @@ export default function HomePage() {
       <section className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl rounded-3xl bg-gradient-to-br from-brand-600 to-brand-800 px-8 py-16 text-center">
           <h2 className="font-heading text-3xl font-bold tracking-tight text-white">
-            Ready to create your first loop?
+            Try the Free AI Loop Video Generator
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-white/80">
             Create stunning loop videos with AI. Free to try, no credit card required.
