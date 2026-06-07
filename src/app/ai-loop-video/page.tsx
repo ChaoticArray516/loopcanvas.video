@@ -8,15 +8,15 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "AI Loop Video — Create Seamless Infinite Loops with AI | LoopCanvas",
+  title: "AI Loop Video Generator — Create Seamless Infinite Loops | LoopCanvas",
   description:
-    "Transform text and images into mesmerizing AI loop videos. Perfect seamless loops for Spotify Canvas, websites, and social media. Free to try, no credit card required.",
+    "Transform text and images into mesmerizing AI loop videos with our free AI loop video generator. Perfect seamless loops for Spotify Canvas, websites, and social media. Free to try, no credit card required.",
   alternates: {
     canonical: "/ai-loop-video",
   },
   openGraph: {
-    title: "AI Loop Video — Create Seamless Infinite Loops with AI | LoopCanvas",
-    description: "Transform text and images into mesmerizing AI loop videos.",
+    title: "AI Loop Video Generator — Create Seamless Infinite Loops | LoopCanvas",
+    description: "Transform text and images into mesmerizing AI loop videos with our free AI loop video generator.",
     url: "/ai-loop-video",
     type: "website",
   },
@@ -49,12 +49,13 @@ export default function AiLoopVideoPage() {
 
           <div className="text-center">
           <h1 className="font-heading text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            AI Loop Video —{" "}
+            AI Loop Video Generator —{" "}
             <span className="gradient-text">Turn Ideas into Mesmerizing Infinite Loops</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            Transform text and images into mesmerizing AI loop videos.
-            Perfect for Spotify Canvas, website backgrounds, and social media. Free to try.
+            Our free AI loop video generator transforms text and images into
+            mesmerizing seamless loop videos. Perfect for Spotify Canvas, website
+            backgrounds, and social media. No credit card required.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link href="/text-to-loop" className="btn-primary inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-base font-medium">
@@ -73,7 +74,7 @@ export default function AiLoopVideoPage() {
       {/* What is an AI Loop Video */}
       <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-heading text-2xl font-bold sm:text-3xl">What is an AI Loop Video?</h2>
+          <h2 className="font-heading text-2xl font-bold sm:text-3xl">What is an AI Loop Video Generator?</h2>
           <p className="mt-4 text-muted-foreground">
             An AI loop video is a short, infinitely repeating video created entirely by artificial intelligence. Unlike traditional videos that play once and stop, loop videos seamlessly transition from their final frame back to the first — creating an endless, hypnotic visual experience that captivates viewers.
           </p>
@@ -89,7 +90,7 @@ export default function AiLoopVideoPage() {
       {/* How AI Loop Videos Work */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-heading text-2xl font-bold sm:text-3xl">How AI Loop Videos Work</h2>
+          <h2 className="font-heading text-2xl font-bold sm:text-3xl">How Our AI Loop Video Generator Works</h2>
           <div className="mt-6 space-y-4">
             {[
               { step: "1. Input Analysis", text: "The AI analyzes your text prompt or uploaded image to understand the visual style, colors, motion direction, and scene composition you want." },
@@ -142,7 +143,7 @@ export default function AiLoopVideoPage() {
       {/* Use Cases */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">Top Use Cases for AI Loop Videos</h2>
+          <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">Top Use Cases for AI Loop Video Generators</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {[
               { icon: Music, title: "Spotify Canvas", text: "Enhance your music with eye-catching vertical loop videos that appear in the Now Playing view." },
@@ -202,7 +203,7 @@ export default function AiLoopVideoPage() {
       {/* Bottom CTA */}
       <section className="bg-muted/30 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl rounded-3xl bg-gradient-to-br from-brand-600 to-brand-800 px-8 py-16 text-center">
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-white">Create Your First AI Loop Video</h2>
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-white">Try Our Free AI Loop Video Generator</h2>
           <p className="mx-auto mt-4 max-w-lg text-white/80">Free to try, no credit card required.</p>
           <Link href="/text-to-loop" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-brand-700 transition-colors hover:bg-white/90">
             Start Creating Free <ArrowRight className="h-5 w-5" />

@@ -8,17 +8,16 @@ export const dynamic = "force-static";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Loop Video Generator — AI-Powered | Free Seamless Loops | LoopCanvas",
+  title: "AI Loop Video Generator — Free Seamless Loops | LoopCanvas",
   description:
-    "Create mesmerizing seamless loop videos with AI. Turn text or photos into infinite loops. Free to try. Perfect for Spotify Canvas, website backgrounds, and social media.",
+    "Create mesmerizing seamless loop videos with our free AI loop video generator. Turn text or photos into infinite loops instantly. Perfect for Spotify Canvas, website backgrounds, and social media.",
   alternates: {
     canonical: "/loop-video-generator",
   },
   openGraph: {
-    title: "Loop Video Generator — AI-Powered | Free Seamless Loops | LoopCanvas",
-    description: "Create mesmerizing seamless loop videos with AI. Turn text or photos into infinite loops.",
+    title: "AI Loop Video Generator — Free Seamless Loops | LoopCanvas",
+    description: "Create mesmerizing seamless loop videos with our free AI loop video generator. Turn text or photos into infinite loops.",
     url: "/loop-video-generator",
-    type: "website",
   },
 };
 
@@ -102,7 +101,7 @@ export default function LoopVideoGeneratorPage() {
       {/* How to Create */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">How to Create Loop Videos with AI</h2>
+          <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">How to Create Loop Videos with Our AI Generator</h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-3">
             {[
               { icon: Wand2, step: "01", title: "Describe or Upload", text: "Enter a text prompt or upload an image. Be as creative as you want — the AI handles the rest." },
@@ -125,7 +124,7 @@ export default function LoopVideoGeneratorPage() {
       {/* Use Cases */}
       <section className="bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">Popular Use Cases for Loop Videos</h2>
+          <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">Popular Use Cases for AI Loop Video Generators</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { icon: Music, title: "Spotify Canvas", text: "Create eye-catching 3-8 second vertical loops that appear in the Now Playing view of Spotify mobile app." },
@@ -148,7 +147,7 @@ export default function LoopVideoGeneratorPage() {
       {/* Why Choose LoopCanvas */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">Why Choose LoopCanvas for Loop Video Generation</h2>
+          <h2 className="text-center font-heading text-2xl font-bold sm:text-3xl">Why Choose Our AI Loop Video Generator</h2>
           <div className="mt-10 space-y-4">
             {[
               { title: "Fast Generation", text: "Most videos are ready in 10-30 seconds. No queues, no waiting." },
@@ -187,7 +186,7 @@ export default function LoopVideoGeneratorPage() {
       {/* Bottom CTA */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl rounded-3xl bg-gradient-to-br from-brand-600 to-brand-800 px-8 py-16 text-center">
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-white">Start Creating Loop Videos</h2>
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-white">Start Creating with Our Free AI Loop Video Generator</h2>
           <p className="mx-auto mt-4 max-w-lg text-white/80">
             Create stunning loop videos with AI. Free to try, no credit card required.
           </p>
