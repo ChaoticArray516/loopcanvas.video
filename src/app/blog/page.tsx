@@ -122,6 +122,24 @@ const posts = [
     tags: ["Technical", "Formats"],
     type: "support",
   },
+  {
+    slug: "best-ai-loop-video-generator-spotify-canvas",
+    title: "Best AI Loop Video Generator for Spotify Canvas (2026)",
+    excerpt:
+      "Discover the best AI loop video generator for creating stunning Spotify Canvas videos. Compare features, quality, and pricing for 2026.",
+    date: "2026-08-11",
+    tags: ["Spotify", "AI Tools"],
+    type: "support",
+  },
+  {
+    slug: "free-ai-loop-video-generator-no-watermark",
+    title: "Free AI Loop Video Generator: No Watermark Guide (2026)",
+    excerpt:
+      "Find the best free AI loop video generator with no watermark. Compare free tiers, limits, and export quality across top tools.",
+    date: "2026-08-18",
+    tags: ["Free", "Guide"],
+    type: "howto",
+  },
 ];
 
 export default function BlogPage() {

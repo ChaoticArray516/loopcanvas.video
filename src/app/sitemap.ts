@@ -15,6 +15,8 @@ function getBlogPosts(): { slug: string; lastModified: string }[] {
     { slug: "musicians-ai-looping-videos", lastModified: "2026-07-21" },
     { slug: "text-to-loop-vs-image-to-loop", lastModified: "2026-07-28" },
     { slug: "seamless-loop-video-resolution-formats", lastModified: "2026-08-04" },
+    { slug: "best-ai-loop-video-generator-spotify-canvas", lastModified: "2026-08-11" },
+    { slug: "free-ai-loop-video-generator-no-watermark", lastModified: "2026-08-18" },
   ];
 }
 
@@ -77,6 +79,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/ai-loop-video-generator`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
     {
       url: `${SITE_URL}/seamless-loop-video`,
